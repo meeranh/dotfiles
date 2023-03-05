@@ -3,7 +3,7 @@
 # This script will use PyWal to set the desktop wallpaper
 
 # Get the wallpaper directory
-WALL_DIR="$HOME/.Wallpapers/"
+WALL_DIR="$HOME/.config/WallPapers"
 
 # Wallpaper is set using PyWal
 wal -i $WALL_DIR -s

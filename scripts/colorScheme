@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script will update .Xresources using pywal
+
+# Get the path to the current wallpaper
+wallpaper=/home/$(whoami)/.Wallpapers
+
+# Generate the colorscheme and update .Xresources
+wal -i $wallpaper -o /home/$(whoami)/.XresourcesBak

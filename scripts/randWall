@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script will randomly set a wallpaper
+# from a directory of images.
+
+# The folder where all images are stored
+WallpaperDir='/home/neo/gifs/'
+
+function setWallpaper {
+    # Get a random image from the directory
+    Wallpaper=$(ls $WallpaperDir | shuf -n 1)
+
+    # Set the wallpaper
+    swww img $WallpaperDir$Wallpaper --transition-type=wipe --transition-angle=30 --transition-step=90 --transition-duration=1
+}
+
+# Run the function
+setWallpaper

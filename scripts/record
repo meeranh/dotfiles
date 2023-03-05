@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# This script will use ffmpeg to record a video from the screen and audio from the microphone will be separated into a separate file.
+
+# If the argument is "start" then the recording will start.
+# If the argument is "stop" then the recording will stop.
+
+if [ "$1" = "start" ]; then
+	# Start recording
+	dunstify " Recording..."
+	ffmpeg -f pulse -ac 2 -i default -f x11grab -s 1920x1080 -r 30 -i :0.0 -vcodec libx264 -preset ultrafast -b:v 3000k -acodec aac -b:a 128k -threads 1 -f mp4 -y ~/.Screenouts/ffmpeg/$(date +%Y-%m-%d_%H-%M-%S).mp4
+
+fi
+
+if [ "$1" = "stop" ]; then
+	# Stop recording
+	dunstify " Recording stopped"
+	killall ffmpeg
+fi

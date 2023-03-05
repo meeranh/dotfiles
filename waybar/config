@@ -1,0 +1,76 @@
+{
+    "spacing" : 15,   // Gaps between modules
+    "margin"  : 10,   // The top margin of the bar
+
+    // Choose the order of the modules
+    "modules-left"    : ["custom/archlogo", "wlr/workspaces"],
+    "modules-center"  : [],
+    "modules-right"   : ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+
+    // Arch logo at the top left
+    "custom/archlogo": {
+      "format": " ",
+    },
+
+    // All my workspaces
+    "wlr/workspaces": {
+        "format"          : "{icon}",
+        "on-scroll-up"    : "hyprctl dispatch workspace e+1",
+        "on-scroll-down"  : "hyprctl dispatch workspace e-1",
+        "on-click"        : "activate",
+        "format-icons"    : {
+          "1" : "I",
+          "2" : "II",
+          "3" : "III",
+          "4" : "IV",
+          "5" : "V",
+          "6" : "VI",
+          "7" : "VII",
+          "8" : "VIII",
+          "9" : "IX",
+          "10" : "X",
+        }
+    },
+
+    // Clock
+    "clock": {
+        "format"      : "{:%I:%M %p}",
+        "format-alt"  : "{:%a, %b %d}",
+    },
+
+    // Adjusting brightness using light and wlsunset
+    "backlight": {
+        "format"          : "{icon} {percent}%",
+        "on-scroll-up"    : "light -A 1",
+        "on-scroll-down"  : "light -U 1",
+        "on-click"        : "wlsunset -t 3000",
+        "format-icons"    : ["", "", "", "", "", "", "", "", ""]
+    },
+
+    // Battery information
+    "battery": {
+        "format"          : "  {capacity}%",
+        "format-alt"      : "  {capacity}%",
+        "format-charging" : "  {capacity}%",
+        "format-plugged"  : "  {capacity}%",
+        "format-icons"    : ["", "", "", "", ""]
+    },
+
+    // WiFi and LAN status
+    "network": {
+        "format-wifi"           : "  {essid}",
+        "format-ethernet"       : "  {ipaddr}/{cidr}",
+        "tooltip-format"        : "  {ifname} via {gwaddr}",
+        "format-linked"         : "  {ifname} (No IP)",
+        "format-disconnected"   : "⚠ Disconnected",
+        "format-alt"            : "{ifname} : {ipaddr}"
+    },
+    
+    // Audio control
+    "pulseaudio": {
+        "scroll-step"   : 5,
+        "format"        : "󰕾 {volume}%",
+        "format-muted"  : "󰸈 Mute",
+        "on-click"      : "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    },
+}

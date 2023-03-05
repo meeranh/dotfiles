@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# This script is used to open a file in Neovim in Alacritty.
+
+alacritty --working-directory "$(dirname "$1")" -e nvim "$1"

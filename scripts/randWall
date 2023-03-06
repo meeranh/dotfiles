@@ -4,7 +4,7 @@
 # from a directory of images.
 
 # The folder where all images are stored
-WallpaperDir='/home/neo/gifs/'
+WallpaperDir='/home/neo/.config/WallPapers'
 
 function setWallpaper {
     # Get a random image from the directory

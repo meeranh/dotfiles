@@ -1,18 +1,41 @@
 #!/bin/bash
 
 # This script will randomly set a wallpaper
-# from a directory of images.
+# Two possible parameters can be passed to this script:
+#		gif	:	sets a gif wallpaper
+#		img	:	sets a static image wallpaper
 
 # The folder where all images are stored
-WallpaperDir='/home/neo/.config/WallPapers/'
+ImgDir='/home/neo/.config/WallPapers/Img/'
+GifDir='/home/neo/.config/WallPapers/Gif/'
 
-function setWallpaper {
+function setImg {
     # Get a random image from the directory
-    Wallpaper=$(ls $WallpaperDir | shuf -n 1)
+    ImgWallpaper=$(ls $ImgDir | shuf -n 1)
 
     # Set the wallpaper
-    swww img $WallpaperDir$Wallpaper --transition-type=wipe --transition-angle=30 --transition-step=90 --transition-duration=1
+    swww img $ImgDir$ImgWallpaper --transition-type=wipe --transition-angle=30 --transition-step=90 --transition-duration=1
 }
 
-# Run the function
-setWallpaper
+function setGif {
+    # Get a random image from the directory
+    GifWallpaper=$(ls $GifDir | shuf -n 1)
+
+    # Set the wallpaper
+    swww img $GifDir$GifWallpaper --transition-type=wipe --transition-angle=30 --transition-step=90 --transition-duration=1
+}
+
+if [ "$1" == "gif" ]; then
+		setGif
+elif [ "$1" == "img" ]; then
+		setImg
+else
+		# Set a random wallpaper
+		RandNum=$(shuf -i 1-2 -n 1)
+
+		if [ $RandNum -eq 1 ]; then
+				setImg
+		else
+				setGif
+		fi
+fi

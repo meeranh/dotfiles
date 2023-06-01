@@ -43,11 +43,13 @@ neofetch
 nextjs-nodejs
 nvim
 obs-studio
+obsidian
 onlyoffice
 org.keshavnrj.ubuntu
 pavucontrol.ini
 picom
 polybar
+Postman
 procps
 pulse
 QtProject.conf
@@ -55,6 +57,7 @@ redshift
 rofi
 rofi.neo
 session
+simple-update-notifier
 sxhkd
 teams
 Thunar

@@ -1,1 +1,1 @@
-brave --force-dark-mode --enable-features=WebUIDarkMode --enable-features=VaapiVideoEncoder,VaapiVideoDecoder --use-gl=egl --enable-accelerated-video
+brave --force-dark-mode --enable-features=WebUIDarkMode --enable-features=VaapiVideoEncoder,VaapiVideoDecoder

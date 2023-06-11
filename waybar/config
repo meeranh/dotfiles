@@ -43,7 +43,7 @@
         "format"          : "{icon} {percent}%",
         "on-scroll-up"    : "light -A 1",
         "on-scroll-down"  : "light -U 1",
-        "on-click"        : "wlsunset -t 3000",
+        "on-click"        : "toggleRedLight",
         "format-icons"    : ["", "", "", "", "", "", "", "", ""]
     },
 

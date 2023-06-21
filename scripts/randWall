@@ -14,7 +14,7 @@ function setImg {
     ImgWallpaper=$(ls $ImgDir | shuf -n 1)
 
     # Set the wallpaper
-    swww img $ImgDir$ImgWallpaper --transition-type=wipe --transition-angle=30 --transition-step=90 --transition-duration=1
+    swww img $ImgDir$ImgWallpaper --transition-type=grow --transition-pos=0.024,0.97 --transition-step=60 --transition-duration=1
 }
 
 function setGif {
@@ -22,7 +22,7 @@ function setGif {
     GifWallpaper=$(ls $GifDir | shuf -n 1)
 
     # Set the wallpaper
-    swww img $GifDir$GifWallpaper --transition-type=wipe --transition-angle=30 --transition-step=90 --transition-duration=1
+    swww img $GifDir$GifWallpaper --transition-type=grow --transition-pos=0.024,0.97 --transition-step=60 --transition-duration=1
 }
 
 if [ "$1" == "gif" ]; then

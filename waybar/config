@@ -10,7 +10,7 @@
     // Arch logo at the top left
     "custom/archlogo": {
       "format"		: " ",
-			"on-click"	: "archOnclick img"
+			"on-click"	: "randWall img"
     },
 
     // All my workspaces

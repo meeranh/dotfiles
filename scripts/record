@@ -8,12 +8,12 @@
 if [ "$1" = "start" ]; then
 	# Start recording
 	dunstify " Recording..."
-	ffmpeg -f pulse -ac 2 -i default -f x11grab -s 1920x1080 -r 30 -i :0.0 -vcodec libx264 -preset ultrafast -b:v 3000k -acodec aac -b:a 128k -threads 1 -f mp4 -y ~/.Screenouts/ffmpeg/$(date +%Y-%m-%d_%H-%M-%S).mp4
+	wf-recorder -c h264_vaapi -d /dev/dri/renderD128 --file ~/wf-$(date +%Y-%m-%d_%H-%M-%S).mp4
 
 fi
 
 if [ "$1" = "stop" ]; then
 	# Stop recording
 	dunstify " Recording stopped"
-	killall ffmpeg
+	killall -2 wf-recorder
 fi

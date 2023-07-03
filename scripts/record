@@ -7,13 +7,13 @@
 
 if [ "$1" = "start" ]; then
 	# Start recording
-	dunstify " Recording..."
+	dunstify "🔴 Recording Started"
 	wf-recorder -c h264_vaapi -d /dev/dri/renderD128 --file ~/wf-$(date +%Y-%m-%d_%H-%M-%S).mp4
 
 fi
 
 if [ "$1" = "stop" ]; then
 	# Stop recording
-	dunstify " Recording stopped"
+	dunstify "🔴 Recording Stopped"
 	killall -2 wf-recorder
 fi

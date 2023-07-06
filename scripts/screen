@@ -5,6 +5,7 @@ FILENAME=$(date +%F_%T)
 
 if [ $XDG_SESSION_TYPE = "wayland" ]; then
   grim - | wl-copy && wl-paste -t image/png > /home/neo/.Screenouts/grim/$FILENAME.png
+	dunstify "📸 Captured screenshot"
   exit 0
 else
 

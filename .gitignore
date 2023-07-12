@@ -1,5 +1,6 @@
 autostart
 baloofileinformationrc
+beets
 binwalk
 BraveSoftware
 bspwm
@@ -26,6 +27,7 @@ gtk-3.0
 gtk-4.0
 guiscrcpy
 htop
+interactsh-client
 kdeglobals
 kdenlive-layoutsrc
 kdenliverc
@@ -47,6 +49,7 @@ obsidian
 onlyoffice
 org.keshavnrj.ubuntu
 pavucontrol.ini
+pdtm
 picom
 polybar
 Postman
@@ -59,6 +62,7 @@ rofi.neo
 session
 simple-update-notifier
 sxhkd
+systemd
 teams
 Thunar
 Typora
@@ -67,5 +71,6 @@ vlc
 wal
 wireshark
 xfce4
+ytmdl
 zoom.conf
 zoomus.conf

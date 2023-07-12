@@ -9,15 +9,33 @@ PROJECT_ID=$2
 # Take in the description as the third CLI parameter
 DESCRIPTION=$3
 
+# Decrements/Increments the timer in case of an adjustment
+ADJUSTMENT=$4
+
 # I think everyone knows I work as a cyber security analyst
 TASK="Cyber Security"
+
+if [[ "$1" = "in" && "$4" != "" ]]; then
+	# Start the timer with an adjustment
+	clockify-cli in -i=0 -p $PROJECT_ID -d "$DESCRIPTION" --task "$TASK" -s $ADJUSTMENT> /dev/null && echo "Started timer: $ADJUSTMENT"
+	exit 0
+fi
+
 
 if [ "$1" = "in" ]; then
 	# Start the timer
 	clockify-cli in -i=0 -p $PROJECT_ID -d "$DESCRIPTION" --task "$TASK" > /dev/null && echo "Started timer"
+	exit 0
 fi
 
 if [ "$1" = "out" ]; then
 	# End the timer
 	clockify-cli out -i=0 > /dev/null && echo "Stopped timer"
+	exit 0
+fi
+
+if [ "$1" = "kill" ]; then
+	# Kill the running timer
+	clockify-cli delete current > /dev/null && echo "Killed current timer"
+	exit 0
 fi

@@ -39,3 +39,16 @@ if [ "$1" = "kill" ]; then
 	clockify-cli delete current > /dev/null && echo "Killed current timer"
 	exit 0
 fi
+
+if [ "$1" = "current" ]; then
+	# Show the currently running timer
+	clockify-cli show current
+	exit 0
+fi
+
+
+if [ "$1" = "last" ]; then
+	# Show the last Clockify entry
+	clockify-cli show last
+	exit 0
+fi

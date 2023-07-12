@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left"    : ["custom/archlogo", "wlr/workspaces"],
     "modules-center"  : [],
-    "modules-right"   : ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+    "modules-right"   : ["mpd", "pulseaudio", "network", "backlight", "battery", "clock", "tray"],
 
     // Arch logo at the top left
     "custom/archlogo": {
@@ -74,4 +74,19 @@
         "format-muted"  : "󰸈 Mute",
         "on-click"      : "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
+
+		// MPD
+    "mpd": {
+        "format": "{stateIcon}  {title}",
+        "format-disconnected": "  Disconnected",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}  Idle",
+        "unknown-tag": "Now Playing",
+        "interval": 2,
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    }
 }

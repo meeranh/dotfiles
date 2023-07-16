@@ -12,7 +12,6 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	)
-
 source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -27,6 +26,9 @@ alias px="proxychains"
 alias nf="neofetch"
 alias h="Hyprland"
 alias l="ls --color=auto"
+
+# FZF Based Navigation
+alias f="cd \$(fzf | xargs dirname)"
 
 # Tmux
 alias t="tmux"
@@ -48,11 +50,11 @@ export QT_SCALE_FACTOR=1.5
 # Firefox environment variables
 export MOZ_ENABLE_WAYLAND=1
 
-# Google cloud instance
-export GCLOUD="neo@YOU_WILL_NOT_SEE_MY_IP"
+# You need my private key to do anything
 export SCP="$GCLOUD:/home/neo/scp"
+export GCLOUD="neo@34.87.172.91"
 
-# Generated for pdtm
+# Generated for pdtm. Do not edit.
 export PATH=$PATH:/home/neo/.pdtm/go/bin
 
 # Changing GOPATH

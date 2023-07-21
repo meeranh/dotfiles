@@ -1,0 +1,1 @@
+chromium --force-device-scale-factor=1.5 --enable-features=VaapiVideoEncoder --extensions-on-chrome-urls --test-type

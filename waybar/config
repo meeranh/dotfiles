@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left"    : ["custom/archlogo", "wlr/workspaces"],
     "modules-center"  : [],
-    "modules-right"   : ["mpd", "pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+    "modules-right"   : ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
 
     // Arch logo at the top left
     "custom/archlogo": {

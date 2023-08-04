@@ -94,12 +94,12 @@ button:hover {
 }
 
 #clock {
-    background-color: #b83f40;
+    background-color: #d20f39;
 }
 
 #battery.charging, #battery.plugged, #battery {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #40a02b;
 }
 
 @keyframes blink {
@@ -137,11 +137,11 @@ label:focus {
 }
 
 #backlight {
-    background-color: #4e7bbf;
+    background-color: #04a5e5;
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #1e66f5;
 }
 
 #network.disconnected {

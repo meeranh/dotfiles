@@ -1,5 +1,6 @@
 {
     "spacing" : 15,   // Gaps between modules
+		"height"	: 35,		// Height of the bar
     "margin"  : 10,   // The top margin of the bar
 
     // Choose the order of the modules

@@ -4,7 +4,7 @@
     "margin"  : 10,   // The top margin of the bar
 
     // Choose the order of the modules
-    "modules-left"    : ["custom/archlogo", "wlr/workspaces"],
+    "modules-left"    : ["custom/archlogo", "hyprland/workspaces"],
     "modules-center"  : [],
     "modules-right"   : ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
 
@@ -15,7 +15,7 @@
     },
 
     // All my workspaces
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "format"          : "{icon}",
         "on-scroll-up"    : "hyprctl dispatch workspace e+1",
         "on-scroll-down"  : "hyprctl dispatch workspace e-1",

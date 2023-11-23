@@ -12,12 +12,9 @@ DESCRIPTION=$3
 # Decrements/Increments the timer in case of an adjustment
 ADJUSTMENT=$4
 
-# I think everyone knows I work as a cyber security analyst
-TASK="Cyber Security"
-
 if [[ "$1" = "in" && "$4" != "" ]]; then
 	# Start the timer with an adjustment
-	clockify-cli in -i=0 -p $PROJECT_ID -d "$DESCRIPTION" --task "$TASK" -s $ADJUSTMENT> /dev/null && echo "Started timer: $ADJUSTMENT"
+	clockify-cli in -i=0 -p $PROJECT_ID -d "$DESCRIPTION" -s $ADJUSTMENT> /dev/null && echo "Started timer: $ADJUSTMENT"
 	exit 0
 fi
 

@@ -1,0 +1,32 @@
+
+#!/bin/bash
+
+# Check if two arguments are given
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <filename> <password>"
+    exit 1
+fi
+
+FILENAME=$1
+PASSWORD=$2
+
+# Convert to absolute path
+ABS_PATH=$(realpath "$FILENAME")
+
+# Check if the file is already encrypted using the 'file' command
+FILE_TYPE=$(file "$ABS_PATH")
+
+if [[ $FILE_TYPE == *"openssl"* ]]; then
+    echo "This file is already encrypted."
+    exit 1
+fi
+
+# Encrypt the file with PBKDF2 key derivation and suppress all output except for the success message
+if openssl enc -aes-256-cbc -pbkdf2 -salt -in "$ABS_PATH" -out "${ABS_PATH}.aes" -k "$PASSWORD" > /dev/null 2>&1; then
+    echo "AES 256 Encryption Successful"
+    mv "${ABS_PATH}.aes" "$ABS_PATH"
+else
+    echo "AES 256 Encryption Failed"
+    exit 1
+fi
+

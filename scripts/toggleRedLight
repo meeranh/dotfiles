@@ -3,9 +3,9 @@
 # This script will run the command 'gammastep -O 3000' if gammastep isn't already running.
 # If gammastep is already running, it will run 'killall gammastep'
 
-if pgrep gammastep > /dev/null
+if pgrep wlsunset > /dev/null
 then
-		killall gammastep
+		killall wlsunset
 else
-		gammastep -O 3000 &
+		wlsunset -T 5000 -g 0.7 &
 fi

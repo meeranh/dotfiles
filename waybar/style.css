@@ -48,6 +48,7 @@ button:hover {
 #workspaces button.focused {
     background-color: #FFFFFF;
     box-shadow: inset 0px -3px #ffffff;
+    color: black
 }
 
 #workspaces button.active{

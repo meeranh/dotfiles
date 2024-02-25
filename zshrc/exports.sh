@@ -16,3 +16,5 @@ export PATH=$PATH:/home/neo/.pdtm/go/bin
 # Changing GOPATH
 export GOPATH=$HOME/.go
 
+# For proper screensharing
+export XDG_CURRENT_DESKTOP=sway

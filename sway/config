@@ -6,6 +6,7 @@ set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 # Always run scripts
 exec_always waybar
 exec_always $spiralcmd
+exec_always screenshareFix
 
 # Setting gaps
 gaps inner 10

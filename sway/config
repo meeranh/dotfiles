@@ -50,7 +50,12 @@ output * bg ~/.config/wallpapers/img/darkFerns.jpg fill
     bindsym $mod+semicolon exec toggleWaybar
 
     # Increase brightness
-    bindsym XF86MonBrightnessUp exec 
+    bindsym XF86MonBrightnessUp exec 'brightnessctl s +1%'
+    bindsym XF86MonBrightnessDown exec 'brightnessctl s 1%-'
+
+		# Volume control
+    bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume 0 +5%'
+    bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume 0 -5%'
 
     # Drag floating windows by holding down $mod and left mouse button and resize with right mouse button + $mod.
     floating_modifier $mod normal

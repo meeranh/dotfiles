@@ -1,48 +1,81 @@
+/* 
+ * Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+*/
+
+/** ********** Colors ********** **/
+@define-color background     #1E2128;
+@define-color background-alt #292d37;
+@define-color border-color	 #ffcc66;
+@define-color foreground     #ABB2BF;
+@define-color selected       #E06B74;
+@define-color black          #32363D;
+@define-color red            #E06B74;
+@define-color green          #98C379;
+@define-color yellow         #E5C07A;
+@define-color blue           #62AEEF;
+@define-color magenta        #C778DD;
+@define-color cyan           #55B6C2;
+@define-color white          #ABB2BF;
+
+/** ********** Fonts ********** **/
 * {
-    font-family: Iosevka Nerd Font, sans-serif;
-    font-size: 22px;
+    font-family: "JetBrains Mono", "Iosevka Nerd Font", sans-serif;
+    font-size: 24px;
 		font-weight: 500;
 }
 
-
 #window {
-    margin: 0px;
-    border: 2px solid;
-    border-color: #ffcc66;
-    border-radius: 15px;
-    background-color: #3F3F3F;
-    color: white;
+	background-color: @background;
+	color: @foreground;
+	border: 2px solid @border-color;
+	border-radius: 12px;
+}
+
+#outer-box {
+	padding: 20px;
 }
 
 #input {
-    margin: 15px;
-    background-color: rgb(112, 122, 137);
-    border-radius: 25px;
-    border: 2px solid rgb(52, 64, 76);
-		color: white
+	background-color: @background-alt;
+    border: 0px solid @red;
+	padding: 4px 10px;
 }
 
 #scroll {
-    margin-bottom: 15px;
+	margin-top: 20px;
+}
+
+#inner-box {
+}
+
+#img {
+	padding-right: 8px;
+}
+
+#text {
+	color: @foreground;
+}
+
+#text:selected {
+	color: @background;
 }
 
 #entry {
-    margin: 1px 15px;
+	padding: 6px;
 }
 
 #entry:selected {
-    background-color: #f1c40f;
-    border: none;
-    outline: none;
-		color: black;
+	background-image: linear-gradient(to right, @selected , @magenta);
+	color: @background;
 }
 
-#entry > box {
-    margin-left: 20px;
+#unselected {
 }
 
-#entry image {
-    padding-right: 10px;
+#selected {
 }
 
-#entry:selected #text { color: black; }
+#input, #entry:selected {
+	border-radius: 30px;
+	color: white;
+}

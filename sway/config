@@ -7,6 +7,7 @@ set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 exec_always waybar
 exec_always $spiralcmd
 exec_always screenshareFix
+exec_always dunst
 
 # Setting gaps
 gaps inner 10
@@ -57,6 +58,11 @@ output * bg ~/.config/wallpapers/img/darkFerns.jpg fill
 		# Volume control
     bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume 0 +5%'
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume 0 -5%'
+
+		# Screenshots and screenrecords
+    bindsym Print exec 'screen full'
+    bindsym $mod+Print exec 'record start'
+    bindsym $mod+Shift+Print exec 'record stop'
 
     # Drag floating windows by holding down $mod and left mouse button and resize with right mouse button + $mod.
     floating_modifier $mod normal

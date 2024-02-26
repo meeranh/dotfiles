@@ -8,7 +8,7 @@
 if [ "$1" = "start" ]; then
 	# Start recording
 	dunstify "🔴 Recording Started"
-	wf-recorder -c h264_vaapi -d /dev/dri/renderD128 --file ~/wf-$(date +%Y-%m-%d_%H-%M-%S).mp4
+	wf-recorder -c h264_vaapi -d /dev/dri/renderD128 --file ~/screenrecords/wf-$(date +%Y-%m-%d_%H-%M-%S).mp4
 
 fi
 

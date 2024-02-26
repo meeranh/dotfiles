@@ -16,8 +16,8 @@ default_border none
 
 ### Variables
 
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
+# Logo key. Mod1: Alt and Mod4: Win
+set $mod Mod1
 
 # Home row direction keys, like vim
 set $left h

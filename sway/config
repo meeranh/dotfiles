@@ -32,7 +32,7 @@ set $menu wofi
 set $browser firefox
 
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg ~/.config/wallpapers/img/darkFerns.jpg fill
+output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
 
 ### Key bindings
 

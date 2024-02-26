@@ -3,24 +3,6 @@
 # This script will use scrot/grim to take a screenshot of the current screen based on the current compositor
 FILENAME=$(date +%F_%T)
 
-if [ $XDG_SESSION_TYPE = "wayland" ]; then
-  grim -g "$(slurp)" - | wl-copy && wl-paste -t image/png > /home/neo/.Screenouts/grim/$FILENAME.png
-	dunstify "📸 Captured screenshot"
-  exit 0
-else
-
-  # If the script is passed the 'full' argument, it will take a screenshot of the entire screen
-  if [ "$1" = "full" ]; then
-    scrot -f '/home/neo/.Screenouts/scrot/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
-    exit 0
-  fi
-
-  # If the script is passed the 'select' argument, it will take a screenshot of the selected area
-  if [ "$1" = "select" ]; then
-    scrot -s '/home/neo/.Screenouts/scrot/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
-    exit 0
-  fi
-
-  # If any other argument is passed, a help message will be displayed
-  echo "Usage: screen [full|select]"
-fi
+grim -g "$(slurp)" - | wl-copy && wl-paste -t image/png > /home/neo/screenshots/$FILENAME.png
+dunstify "📸 Captured screenshot"
+exit 0

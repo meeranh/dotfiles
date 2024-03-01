@@ -3,6 +3,9 @@
 # Sway spiral layout script (python-i3ipc package required)
 set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 
+# Disable shitty xwayland
+xwayland disable
+
 # Always run scripts
 exec_always waybar
 exec_always $spiralcmd

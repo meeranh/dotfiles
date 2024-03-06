@@ -1,6 +1,6 @@
 {
   "spacing": 15,
-  "height": 35,
+  "height": 40,
   "margin": 10,
   "modules-left": [
     "custom/archlogo",
@@ -15,10 +15,12 @@
     "clock",
     "tray"
   ],
+
   "custom/archlogo": {
     "format": " ",
     "on-click": "randWall img"
   },
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
@@ -37,27 +39,20 @@
       "10": "X"
     }
   },
+
   "clock": {
     "format": "{:%I:%M %p}",
     "format-alt": "{:%a, %b %d}"
   },
+
   "backlight": {
     "format": "{icon} {percent}%",
-    "on-scroll-up": "light -A 1",
-    "on-scroll-down": "light -U 1",
+    "on-scroll-up": "brightnessctl s +1%",
+    "on-scroll-down": "brightnessctl s 1%-",
     "on-click": "toggleRedLight",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
+
   "battery": {
     "format": "  {capacity}%",
     "format-alt": "  {capacity}%",
@@ -71,6 +66,7 @@
       ""
     ]
   },
+
   "network": {
     "format-wifi": "  {essid}",
     "format-ethernet": "  {ipaddr}/{cidr}",
@@ -79,12 +75,14 @@
     "format-disconnected": "⚠ Disconnected",
     "format-alt": "{ifname} : {ipaddr}"
   },
+
   "pulseaudio": {
     "scroll-step": 5,
     "format": "󰕾 {volume}%",
     "format-muted": "󰸈 Mute",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
+
   "mpd": {
     "format": "{stateIcon}  {title}",
     "format-disconnected": "  Disconnected",

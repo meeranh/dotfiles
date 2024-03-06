@@ -1,14 +1,54 @@
-term=kitty
-location=top
-yoffset=180
-width=30%
-lines=11
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Wofi Config
 
-prompt=Search
+## Files (absolute path)
+#style=/home/USER/.config/sway/wofi/style.css
+#color=/home/USER/.config/sway/wofi/colors
+
+## General
 show=drun
-insensitive=true
-allow_images=true
-hide_scroll=true
+prompt=Apps
+normal_window=false
+layer=top
+term=foot
 
-aways_parse_args=true
-show_all=true
+## Geometry
+width=30%
+height=50%
+location=0
+#xoffset=10
+#yoffset=10
+#lines=8
+#columns=1
+orientation=vertical
+halign=fill
+#valign=center
+#content_halign=fill
+line_wrap=off
+dynamic_lines=false
+
+## Images
+allow_markup=true
+allow_images=true
+image_size=24
+
+## Search
+#search=STRING
+exec_search=false
+hide_search=false
+parse_search=false
+#matching=fuzzy
+insensitive=false
+
+## Other
+hide_scroll=true
+no_actions=true
+sort_order=default
+gtk_dark=true
+filter_rate=100
+#cache_file=/dev/null
+
+## Keys
+key_expand=Tab
+key_exit=Escape

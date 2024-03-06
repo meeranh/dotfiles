@@ -19,6 +19,7 @@
     background-color: rgb(112, 122, 137);
     border-radius: 25px;
     border: 2px solid rgb(52, 64, 76);
+		color: white
 }
 
 #scroll {
@@ -31,7 +32,6 @@
 
 #entry:selected {
     background-color: #f1c40f;
-    border-radius: 25px;
     border: none;
     outline: none;
 		color: black;
@@ -44,3 +44,6 @@
 #entry image {
     padding-right: 10px;
 }
+
+#entry:selected #text { color: black; }
+

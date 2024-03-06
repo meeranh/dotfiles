@@ -12,8 +12,8 @@ TIME=$2
 REPEAT=$3
 
 if [ "$REPEAT" == "-r" ]; then
-    watch -n $(($TIME*60)) "dunstify \"$MESSAGE\"" & > /dev/null 2>&1
+    watch -n $(($TIME*60)) dunstify $MESSAGE & > /dev/null 2>&1
 else
-    sleep $(($TIME*60)) && "dunstify \"$MESSAGE\"" & > /dev/null 2>&1
+    sleep $(($TIME*60)) && dunstify $MESSAGE & > /dev/null 2>&1
 fi
 

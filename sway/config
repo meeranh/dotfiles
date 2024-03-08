@@ -75,7 +75,7 @@ output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
     bindsym $mod+Shift+semicolon reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec 'swaymsg exit'
+    bindsym $mod+e exec 'swaymsg exit'
 
 # Moving around:
     # Move your focus around

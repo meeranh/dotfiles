@@ -5,6 +5,7 @@ export GDK_DPI_SCALE=1.5
 export PATH=$PATH:/home/neo/.config/scripts
 export EDITOR=nvim
 export PATH=$PATH:/usr/lib
+export PATH=$PATH:/opt/cuda/bin
 export QT_SCALE_FACTOR=1.5
 
 # Firefox environment variables

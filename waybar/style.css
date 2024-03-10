@@ -120,6 +120,10 @@ button:hover {
     animation-direction: alternate;
 }
 
+#battery.discharging {
+    background-color: #f53c3c;
+}
+
 label:focus {
     background-color: #000000;
 }

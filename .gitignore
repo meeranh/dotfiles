@@ -38,6 +38,7 @@ kdenliverc
 kde.org
 keyd
 libreoffice
+libvirt
 light
 linode-cli
 menus
@@ -65,6 +66,7 @@ pulse
 pypoetry
 QtProject.conf
 redshift
+rizin
 rofi
 rofi.neo
 session

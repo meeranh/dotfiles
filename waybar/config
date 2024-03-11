@@ -5,12 +5,20 @@
 
   "modules-left": ["custom/archlogo", "sway/workspaces"],
   "modules-center": [],
-  "modules-right": ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+  "modules-right": ["pulseaudio", "network", "backlight", "temperature", "battery", "clock", "tray"],
 
   "custom/archlogo": {
     "format": " ",
     "on-click": "randWall img"
   },
+
+	"temperature": {
+			"interval": 10,
+			"thermal-zone": 0,
+			"critical-threshold": 80,
+			"format-critical": " {temperatureC}°C",
+			"format": " {temperatureC}°C",
+	},
 
   "clock": {
     "format": "{:%I:%M %p}",

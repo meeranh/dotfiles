@@ -19,3 +19,6 @@ export GOPATH=$HOME/.go
 
 # For proper screensharing
 export XDG_CURRENT_DESKTOP=sway
+
+# Setting my Windows 'My Documents' location
+export WINDOCS=/windows/Users/Neo/Documents

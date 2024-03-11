@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Launch Windows 
+if [ "$1" = "start" ]; then
+	virsh start Win10
+	remote-viewer -f spice://localhost:5900 > /dev/null 2>&1 &
+fi
+
+if [ "$1" = "shutdown" ]; then
+	virsh shutdown Win10
+	killall remote-viewer
+fi

@@ -11,6 +11,7 @@
     "pulseaudio",
     "network",
     "backlight",
+		"temperature",
     "battery",
     "clock",
     "tray"
@@ -39,6 +40,14 @@
       "10": "X"
     }
   },
+
+	"temperature": {
+			"interval": 10,
+			"thermal-zone": 0,
+			"critical-threshold": 80,
+			"format-critical": " {temperatureC}°C",
+			"format": " {temperatureC}°C",
+	},
 
   "clock": {
     "format": "{:%I:%M %p}",

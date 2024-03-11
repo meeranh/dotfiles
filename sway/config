@@ -75,7 +75,7 @@ output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
     bindsym $mod+Shift+semicolon reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+e exec 'swaymsg exit'
+    bindsym $mod+x exec 'swaymsg exit'
 
 		# Launching the Windows VM
     bindsym $mod+v exec 'toggleWin start'

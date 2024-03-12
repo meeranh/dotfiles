@@ -8,12 +8,12 @@
 if [ "$1" = "start" ]; then
 	# Start recording
 	dunstify "🔴 Recording Started"
-	wf-recorder -c h264_vaapi -d /dev/dri/renderD128 --file ~/screenrecords/wf-$(date +%Y-%m-%d_%H-%M-%S).mp4
+	obs --startrecording
 
 fi
 
 if [ "$1" = "stop" ]; then
 	# Stop recording
 	dunstify "🔴 Recording Stopped"
-	killall -2 wf-recorder
+	killall obs
 fi

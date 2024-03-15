@@ -11,6 +11,7 @@ alias dnd="killall dunst"
 alias f="fd . | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null' | xargs -r nvim"
 alias pdf=zathura
 alias img=imv
+alias rm=trash # Depends on trash-cli
 
 # Python Venv
 alias vc="python3 -m venv venv"

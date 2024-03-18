@@ -14,8 +14,8 @@ alias img=imv
 alias rm=trash # Depends on trash-cli
 
 # Python Venv
-alias vc="python3 -m venv venv"
-alias va="source venv/bin/activate"
+alias vc="python3 -m venv .venv"
+alias va="source .venv/bin/activate"
 
 # Setting up Zoxide
 alias cd=z

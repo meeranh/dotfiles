@@ -8,7 +8,8 @@ alias s="sway"
 alias h=Hyprland
 alias l="ls --color=auto"
 alias dnd="killall dunst"
-alias f="fd . | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null' | xargs -r nvim"
+alias fz="fd . | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null' | xargs -r nvim"
+alias f="yazi"
 alias pdf=zathura
 alias img=imv
 alias rm=trash # Depends on trash-cli

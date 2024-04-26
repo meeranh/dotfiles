@@ -3,6 +3,7 @@ autostart
 baloofileinformationrc
 beets
 binwalk
+bpytop
 BraveSoftware
 bspwm
 cef_user_data
@@ -16,6 +17,7 @@ dconf
 deluge
 discord
 freerdp
+gcloud
 Genymobile
 gh
 GIMP
@@ -47,6 +49,7 @@ Microsoft Teams - Preview
 mimeapps.list
 mpd
 ncmpcpp
+ncspot
 nemo
 neofetch
 nextjs-nodejs

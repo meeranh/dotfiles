@@ -74,6 +74,7 @@ rofi
 rofi.neo
 session
 simple-update-notifier
+sqlitebrowser
 sxhkd
 systemd
 teams

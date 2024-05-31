@@ -13,6 +13,7 @@ alias pdf=zathura
 alias img=imv
 alias rm=trash # Depends on trash-cli
 alias pq="proxychains -q"
+alias open="xdg-open"
 
 # Python Venv
 alias vc="python3 -m venv .venv"
@@ -20,3 +21,6 @@ alias va="source .venv/bin/activate"
 
 # Setting up Zoxide
 alias cd=z
+
+# Bluetooth TUI manager alias
+alias bt=bluetui

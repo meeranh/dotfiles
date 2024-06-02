@@ -93,3 +93,8 @@ yarn
 ytmdl
 zoom.conf
 zoomus.conf
+
+# Certificates
+*.pem
+*.cer
+*.p12

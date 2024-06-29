@@ -16,6 +16,7 @@ cpupower_gui
 dconf
 deluge
 discord
+ffuf
 freerdp
 gcloud
 Genymobile
@@ -33,22 +34,26 @@ gtk-3.0
 gtk-4.0
 guiscrcpy
 htop
+httpx
 interactsh-client
 kdeglobals
 kdenlive-layoutsrc
 kdenliverc
 kde.org
 keyd
+kwalletrc
 libreoffice
 light
 linode-cli
 menus
+mitmproxy
 Microsoft
 microsoft-edge
 Microsoft Teams - Preview
 mimeapps.list
 mpd
 ncmpcpp
+naabu
 ncspot
 nemo
 neofetch
@@ -76,11 +81,13 @@ session
 simple-update-notifier
 sqlitebrowser
 sxhkd
+subfinder
 systemd
 teams
 thorium
 Thunar
 Typora
+uncover
 Vector 35
 virt-viewer
 VirtualBox

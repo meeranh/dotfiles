@@ -13,3 +13,5 @@ function f() {
 	fi
 	rm -f -- "$tmp"
 }
+
+eval "$(fzf --zsh)"

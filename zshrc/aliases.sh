@@ -24,3 +24,6 @@ alias cd=z
 
 # Bluetooth TUI manager alias
 alias bt=bluetui
+
+# Clear the screen
+alias c="clear"

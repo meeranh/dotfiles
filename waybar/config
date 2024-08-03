@@ -20,7 +20,7 @@
 
   "custom/archlogo": {
     "format": " ",
-    "on-click": "randWall img"
+    "on-click": "kitty"
   },
 
 	"custom/music": {

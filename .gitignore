@@ -17,6 +17,7 @@ dconf
 deluge
 discord
 ffuf
+filezilla
 freerdp
 gcloud
 Genymobile
@@ -86,6 +87,7 @@ systemd
 teams
 thorium
 Thunar
+tmux/plugins
 Typora
 uncover
 Vector 35

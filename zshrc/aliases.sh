@@ -27,3 +27,6 @@ alias bt=bluetui
 
 # Clear the screen
 alias c="clear"
+
+# Caido listens on all interfaces
+alias caido="caido-cli -l 0.0.0.0:8080"

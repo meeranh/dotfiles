@@ -15,3 +15,11 @@ function f() {
 }
 
 eval "$(fzf --zsh)"
+
+# PNPM Setup
+export PNPM_HOME="/home/neo/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

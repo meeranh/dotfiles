@@ -6,8 +6,7 @@ output eDP-1 mode 1920x1080@144Hz
 # Sway spiral layout script (python-i3ipc package required)
 set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 
-# Disable shitty xwayland
-xwayland disable
+xwayland enable
 
 # Always run scripts
 exec_always waybar

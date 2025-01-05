@@ -172,7 +172,7 @@ backlight_module: &backlight_module
         spacing: 2
         items:
           - string:
-              text: " "
+              text: " "
               << : *color_red
               on-click:
                 left: "toggleRedLight"
@@ -340,7 +340,7 @@ workspaces_module: &workspaces_module
 # 4) THE BAR DEFINITION
 ###############################################################################
 bar:
-  location: bottom
+  location: top
   height: 35
   background: "1A1B26FF"
   spacing: 5
@@ -366,9 +366,9 @@ bar:
   left:
     # Left side modules
     - *arch_logo
-    - *separator
-    # - *mem_module
     # - *separator
+    # - *mem_module
+    - *separator
     - *player_status_module
     - *separator
     - *player_metadata_module

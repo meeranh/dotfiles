@@ -9,7 +9,7 @@ set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 xwayland enable
 
 # Always run scripts
-exec_always waybar
+exec_always yambar
 exec_always $spiralcmd
 exec_always screenshareFix
 exec_always dunst
@@ -17,8 +17,9 @@ exec_always dunst
 # Setting gaps
 gaps inner 10
 
-# Removing Sway titlebars
-default_border none
+# Sway borders
+default_border pixel 2
+client.focused "#9f1209" "#9f1209" "#ffffff" "#9f1209"
 
 ### Variables
 
@@ -54,8 +55,8 @@ output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
     # Start your launcher
     bindsym $mod+r exec $menu
 
-    # Toggle Waybar
-    bindsym $mod+semicolon exec toggleWaybar
+    # Toggle Yambar
+    bindsym $mod+semicolon exec toggleYambar
 
     # Increase brightness
     bindsym XF86MonBrightnessUp exec 'brightnessctl s +1%'

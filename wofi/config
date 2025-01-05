@@ -1,11 +1,3 @@
-## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
-##
-## Wofi Config
-
-## Files (absolute path)
-#style=/home/USER/.config/sway/wofi/style.css
-#color=/home/USER/.config/sway/wofi/colors
-
 ## General
 show=drun
 prompt=Apps
@@ -17,14 +9,8 @@ term=foot
 width=30%
 height=50%
 location=0
-#xoffset=10
-#yoffset=10
-#lines=8
-#columns=1
 orientation=vertical
 halign=fill
-#valign=center
-#content_halign=fill
 line_wrap=off
 dynamic_lines=false
 
@@ -34,11 +20,9 @@ allow_images=true
 image_size=24
 
 ## Search
-#search=STRING
 exec_search=false
 hide_search=false
 parse_search=false
-#matching=fuzzy
 insensitive=false
 
 ## Other
@@ -47,7 +31,6 @@ no_actions=true
 sort_order=default
 gtk_dark=true
 filter_rate=100
-#cache_file=/dev/null
 
 ## Keys
 key_expand=Tab

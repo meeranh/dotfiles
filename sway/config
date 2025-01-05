@@ -18,8 +18,7 @@ exec_always dunst
 gaps inner 10
 
 # Sway borders
-default_border pixel 2
-client.focused "#9f1209" "#9f1209" "#ffffff" "#9f1209"
+default_border pixel 1
 
 ### Variables
 

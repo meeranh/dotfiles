@@ -1,3 +1,0 @@
-killall VirtualBoxVM
-killall VBoxSVC
-killall VirtualBox

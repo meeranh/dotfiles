@@ -17,5 +17,4 @@ alias c="clear"
 alias caido="caido-cli -l 0.0.0.0:8080" # Depends on caido-cli
 alias cd=z # Depends on zoxide
 alias bt=bluetui # Depends on bluetui
-alias rm=trash # Depends on trash-cli
 alias pq="proxychains -q" # Depends on proxychains

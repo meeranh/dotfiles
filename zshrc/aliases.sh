@@ -2,13 +2,20 @@
 alias vim="nvim"
 alias nv="nvim"
 alias v="nvim"
-alias px="proxychains"
 alias nf="neofetch"
-alias s="sway --unsupported-gpu"
+alias s="sway"
 alias l="ls --color=auto"
 alias dnd="killall dunst"
-alias f="fd . | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null' | xargs -r nvim"
+alias fz="fd . | fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null' | xargs -r nvim"
 alias pdf=zathura
+alias img=imv
+alias open="xdg-open"
+alias vc="python3 -m venv .venv"
+alias va="source .venv/bin/activate"
+alias c="clear"
 
-# Setting up Zoxide
-alias cd=z
+alias caido="caido-cli -l 0.0.0.0:8080" # Depends on caido-cli
+alias cd=z # Depends on zoxide
+alias bt=bluetui # Depends on bluetui
+alias rm=trash # Depends on trash-cli
+alias pq="proxychains -q" # Depends on proxychains

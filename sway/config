@@ -39,6 +39,13 @@ set $browser firefox
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
 
+# Touchpad tap-to-touch
+input "1267:12826:ELAN07D2:00_04F3:321A_Touchpad" {
+	dwt enabled
+	tap enabled
+	middle_emulation enabled
+}
+
 ### Key bindings
 
 # Basics:

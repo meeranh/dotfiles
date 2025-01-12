@@ -77,6 +77,9 @@ input "1267:12826:ELAN07D2:00_04F3:321A_Touchpad" {
     bindsym $mod+Print exec 'record start'
     bindsym $mod+Shift+Print exec 'record stop'
 
+		# Toggle sound
+		bindsym $mod+m exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+
     # Drag floating windows by holding down $mod and left mouse button and resize with right mouse button + $mod.
     floating_modifier $mod normal
 

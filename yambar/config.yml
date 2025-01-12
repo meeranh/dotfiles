@@ -2,7 +2,7 @@
 # 1) FONT & COLORS
 ###############################################################################
 font_settings: &font_settings
-  font: "Iosevka Nerd Font:pixelsize=22"
+  font: "Iosevka Nerd Font:pixelsize=20"
 
 workspace_font_settings: &workspace_font_settings
   font: "Iosevka Nerd Font:pixelsize=26"
@@ -166,7 +166,7 @@ network_module: &network_module
 # 3E) BACKLIGHT MODULE
 backlight_module: &backlight_module
   backlight:
-    name: amdgpu_bl1
+    name: amdgpu_bl2
     content:
       list:
         spacing: 2

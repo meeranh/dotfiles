@@ -34,7 +34,7 @@ set $right l
 
 set $term foot
 set $menu wofi
-set $browser firefox
+set $browser zen-browser
 
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 output * bg ~/.config/wallpapers/img/pinkRose.jpg fill

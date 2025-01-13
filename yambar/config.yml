@@ -2,7 +2,7 @@
 # 1) FONT & COLORS
 ###############################################################################
 font_settings: &font_settings
-  font: "Iosevka Nerd Font:pixelsize=20"
+  font: "Iosevka Nerd Font:pixelsize=19"
 
 workspace_font_settings: &workspace_font_settings
   font: "Iosevka Nerd Font:pixelsize=26"
@@ -349,9 +349,22 @@ bar:
     - *color_white
     - *font_settings
 
+  left:
+    # Left side modules
+    - *arch_logo
+    - *separator
+    - *player_status_module
+    - *separator
+    - *player_metadata_module
+
+  center:
+    - *workspaces_module
+
   right:
     # Right side modules
     - *cpu_module
+    - *separator
+    - *mem_module
     - *separator
     - *battery_module
     - *separator
@@ -362,16 +375,3 @@ bar:
     - *backlight_module
     - *separator
     - *clock_module
-
-  left:
-    # Left side modules
-    - *arch_logo
-    # - *separator
-    # - *mem_module
-    - *separator
-    - *player_status_module
-    - *separator
-    - *player_metadata_module
-
-  center:
-    - *workspaces_module

@@ -2,7 +2,7 @@
 # 1) FONT & COLORS
 ###############################################################################
 font_settings: &font_settings
-  font: "Iosevka Nerd Font:pixelsize=19"
+  font: "Iosevka Nerd Font:pixelsize=20"
 
 workspace_font_settings: &workspace_font_settings
   font: "Iosevka Nerd Font:pixelsize=26"
@@ -211,7 +211,7 @@ mem_module: &mem_module
               text: " "
               <<: *color_cyan
           - string:
-              text: " {used:mb} MiB"
+              text: " {percent_used}%"
 
 # 3H) SCRIPT MODULE FOR PLAYER STATUS
 player_status_module: &player_status_module

@@ -9,7 +9,7 @@ sudo pacman --noconfirm -S sway wlroots git base-devel python python-pip make \
     ttf-iosevka-nerd brightnessctl zsh-autosuggestions zsh-syntax-highlighting \
     nemo bpytop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
     wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
-    proxychains-ng v2ray github-cli bluez bluez-utils bluetui
+    proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared
 
 # Clone paru-bin from AUR and install it without prompts
 git clone https://aur.archlinux.org/paru-bin.git
@@ -19,7 +19,7 @@ cd ..
 rm -rf paru-bin
 
 # Install additional packages via paru without prompts
-paru --noconfirm -S yambar caido-cli burpsuite zen-browser-bin xcp clockify-cli-bin
+paru --noconfirm -S yambar caido-cli burpsuite zen-browser-bin xcp clockify-cli-bin twingate-cli
 
 # Clone dotfiles repository and set up .zshrc
 if [ -d "~/.config" ]; then

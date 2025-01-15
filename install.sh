@@ -8,7 +8,8 @@ sudo pacman --noconfirm -S sway wlroots git base-devel python python-pip make \
     python-i3ipc neofetch zathura xdg-utils bluetui imv mpv zoxide pyenv hurl \
     ttf-iosevka-nerd brightnessctl zsh-autosuggestions zsh-syntax-highlighting \
     nemo bpytop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
-    wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli
+    wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
+    proxychains-ng v2ray
 
 # Clone paru-bin from AUR and install it without prompts
 git clone https://aur.archlinux.org/paru-bin.git

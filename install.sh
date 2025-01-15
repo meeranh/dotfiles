@@ -29,4 +29,4 @@ git clone https://github.com/meeranh/dotfiles.git ~/.config
 cp ~/.config/.zshrc ~/.zshrc
 
 # Final message
-echo "Install completed!"
+echo "Package & rice installation completed!"

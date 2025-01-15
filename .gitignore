@@ -4,6 +4,8 @@
 # Un-ignore specific files
 !starship.toml
 !user-dirs.dirs
+!install.sh
+!README.md
 
 # Un-ignore specific directories and their contents
 !dunst/

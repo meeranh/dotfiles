@@ -1,3 +1,9 @@
-# Packages
+# Installation
+1. First setup your Arch Linux installation
+2. Create your users with a home directory
+3. Login to your new user account
+4. Run `curl https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/install.sh | bash`
+
+# Packages Installed
 + **Pacman**: `sway wlroots git python python-pip make cargo python-virtualenv pipewire wf-recorder swaybg neovim vim sudo foot dunst libnotify wofi zsh starship obs-studio xdg-desktop-portal-wlr xdg-desktop-portal wl-sunset playerctl grim slurp wl-clipboard yazi trash-cli metasploit nmap gnu-netcat luarocks rust nodejs npm pnpm yarn python-i3ipc neofetch zathura xdg-utils bluetui imv mpv zoxide pyenv hurl ttf-iosevka-nerd brightnessctl zsh-autosuggestions zsh-syntax-highlighting nemo bpytop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub wlsunset wev ripgrep fzf cowsay tmux networkmanager bat`
 + **AUR**: `yambar caido-cli burpsuite zen-browser-bin xcp`

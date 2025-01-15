@@ -10,13 +10,12 @@
 # Un-ignore specific directories and their contents
 !dunst/
 !foot/
-!kitty/
 !scripts/
 !sway/
 !wallpapers/
 !wofi/
 !yambar/
-!zshrc/
+!fish/
 
 # Ensure files inside the allowed directories are included
 !dunst/**
@@ -27,4 +26,4 @@
 !wallpapers/**
 !wofi/**
 !yambar/**
-!zshrc/**
+!fish/**

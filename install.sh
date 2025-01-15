@@ -10,7 +10,7 @@ sudo pacman --noconfirm -S sway wlroots git base-devel python python-pip make \
     nemo bpytop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
     wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
     proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
-    docker docker-compose
+    docker docker-compose libvirt wireplumber
 
 # Clone paru-bin from AUR and install it without prompts
 git clone https://aur.archlinux.org/paru-bin.git
@@ -29,6 +29,20 @@ fi
 
 git clone https://github.com/meeranh/dotfiles.git ~/.config
 cp ~/.config/.zshrc ~/.zshrc
+
+# Add current user to necessary groups
+sudo usermod -aG kvm,video,libvirt,docker $(whoami)
+
+# Enable user services
+to_enable_user=(dunst.service pipewire.service wireplumber.service xdg-desktop-portal.service xdg-desktop-portal-wlr.service)
+for service in "${to_enable_user[@]}"; do
+    systemctl --user enable "$service"
+    systemctl --user start "$service"
+done
+
+# Enable system-wide services
+sudo systemctl enable bluetooth.service docker.service NetworkManager.service
+sudo systemctl start bluetooth.service docker.service NetworkManager.service
 
 # Final message
 echo "Package & rice installation completed!"

@@ -18,7 +18,7 @@ cd ..
 rm -rf paru-bin
 
 # Install additional packages via paru without prompts
-paru --noconfirm -S yambar caido-cli burpsuite zen-browser-bin xcp
+paru --noconfirm -S yambar caido-cli burpsuite zen-browser-bin xcp clockify-cli-bin
 
 # Clone dotfiles repository and set up .zshrc
 if [ -d "~/.config" ]; then

@@ -5,15 +5,21 @@
 # If the argument is "start" then the recording will start.
 # If the argument is "stop" then the recording will stop.
 
+FILENAME=$(date +%F_%T)
+DIRECTORY="$HOME/Media/screenrecords/"
+
+# Make screenshot folder
+mkdir -p $DIRECTORY
+
 if [ "$1" = "start" ]; then
 	# Start recording
 	dunstify "🔴 Recording Started"
-	obs --startrecording
+	wf-recorder --file="$DIRECTORY/$FILENAME.mp4"
 
 fi
 
 if [ "$1" = "stop" ]; then
 	# Stop recording
 	dunstify "🔴 Recording Stopped"
-	killall obs
+	killall wf-recorder
 fi

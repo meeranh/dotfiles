@@ -9,7 +9,7 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
     proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
     docker docker-compose libvirt wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
-    tldr locate
+    tldr locate go python-pipx
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git

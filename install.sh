@@ -9,7 +9,7 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
     proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
     docker docker-compose libvirt wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
-    tldr locate go python-pipx
+    tldr locate go python-pipx glow
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git
@@ -19,14 +19,14 @@ cd ..
 rm -rf paru-bin
 
 # Install additional packages via paru
-paru -S yambar caido-cli burpsuite zen-browser-bin xcp
+paru -S yambar caido-cli burpsuite zen-browser-bin xcp virtualfish
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config
 git clone -b sway https://github.com/meeranh/dotfiles.git ~/.config
 
 # Add current user to necessary groups
-sudo usermod -aG kvm,video,libvirt,docker,network $(whoami)
+sudo usermod -aG kvm,video,libvirt,docker,network,input $(whoami)
 
 # Enable and start user services
 systemctl --user enable pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr

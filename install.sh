@@ -8,8 +8,10 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     nemo bpytop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
     wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
     proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
-    docker docker-compose libvirt wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
-    tldr locate go python-pipx glow
+    docker docker-compose wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
+    tldr locate go python-pipx glow ltrace cutter radare2 rz-ghidra r2ghidra \
+    libvirt qemu-full qemu-img virt-install virt-manager virt-viewer \
+		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git
@@ -19,7 +21,8 @@ cd ..
 rm -rf paru-bin
 
 # Install additional packages via paru
-paru -S yambar caido-cli burpsuite zen-browser-bin xcp virtualfish
+paru -S yambar caido-cli burpsuite zen-browser-bin xcp virtualfish waydroid \
+	python-pyclip subfinder-bin
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config
@@ -35,6 +38,13 @@ systemctl --user start pipewire wireplumber xdg-desktop-portal xdg-desktop-porta
 # Enable system-wide services
 sudo systemctl enable bluetooth.service docker.service NetworkManager.service
 sudo systemctl start bluetooth.service docker.service NetworkManager.service
+
+# Enable virtualization services
+for drv in qemu interface network nodedev nwfilter secret storage; do
+    sudo systemctl enable virt${drv}d.service;
+    sudo systemctl enable virt${drv}d{,-ro,-admin}.socket;
+done
+sudo systemctl enable libvirtd.service
 
 # Set shell to Fish
 chsh -s $(which fish)

@@ -22,4 +22,4 @@
 2. Create your users with a home directory
 3. Configure your `wheel` group and other `visudo` settings
 4. Login to your new user account
-5. Run `curl https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/install.sh | bash`
+5. Run `curl https://raw.githubusercontent.com/meeranh/dotfiles/sway/install.sh | bash`

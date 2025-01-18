@@ -10,8 +10,8 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
     docker docker-compose wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
     tldr locate go python-pipx glow ltrace cutter radare2 rz-ghidra r2ghidra \
-    libvirt qemu-full qemu-img virt-install virt-manager virt-viewer \
-		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go
+    libvirt qemu-full qemu-img virt-install virt-manager virt-viewer man \
+		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go adwaita-icon-theme
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git

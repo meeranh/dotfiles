@@ -6,7 +6,8 @@ output eDP-1 mode 1920x1080@144Hz
 # Sway spiral layout script (python-i3ipc package required)
 set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 
-xwayland enable
+# Enable if compatability issues
+xwayland disable
 
 # Always run scripts
 exec_always yambar
@@ -19,6 +20,9 @@ gaps inner 10
 
 # Sway borders
 default_border pixel 1
+
+client.focused #FFFFFF99 #FFFFFF99 #FFFFFF99
+client.unfocused #333333 #5F676A #FFFFFF #484E50 #5F676A
 
 ### Variables
 

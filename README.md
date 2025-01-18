@@ -1,7 +1,12 @@
 # Screenshots
-![Tiled](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/tile.png)
+
+![Float](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/float.png)
+
+![Typr](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/typr.png)
 
 ![Wofi](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/wofi.png)
+
+![Tiled](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/tile.png)
 
 ![Browser](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/browser.png)
 

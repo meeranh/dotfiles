@@ -8,6 +8,18 @@
 # Screenshots
 ![Tiled](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/tile.png)
 
+![Floating](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/float.png)
+
 ![Wofi](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/wofi.png)
 
-![Floating](https://raw.githubusercontent.com/meeranh/dotfiles/refs/heads/sway/wallpapers/rice/float.png)
+# Components
++ **Distro**: [Arch Linux](https://archlinux.org)
++ **WM**: [Sway](https://github.com/swaywm/sway)
++ **Bar**: [Yambar](https://codeberg.org/dnkl/yambar)
++ **Terminal**: [Foot](https://codeberg.org/dnkl/foot)
++ **Shell**: [Fish](https://github.com/fish-shell/fish-shell)
++ **Shell Theme**: [Starship](https://github.com/starship/starship)
++ **Launcher**: [Wofi](https://hg.sr.ht/~scoopta/wofi)
++ **Browser**: [Zen](https://zen-browser.app/)
++ **Editor**: [My Neovim Config](https://github.com/meeranh/BlazeVim)
++ **Neovim Theme**: [Cozy Bear](https://github.com/ebadfd/cozy-bear-nvim)

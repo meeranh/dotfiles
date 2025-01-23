@@ -14,3 +14,4 @@ set -gx XDG_CURRENT_DESKTOP sway
 set -gx MOZ_ENABLE_WAYLAND 1
 set -gx GOPATH $HOME/.go
 set -gx EDITOR nvim
+set -gx ELECTRON_OZONE_PLATFORM_HINT auto

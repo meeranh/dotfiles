@@ -2,7 +2,7 @@
 # 1) FONT & COLORS
 ###############################################################################
 font_settings: &font_settings
-  font: "Iosevka Nerd Font:pixelsize=20"
+  font: "Iosevka Nerd Font:pixelsize=18"
 
 workspace_font_settings: &workspace_font_settings
   font: "Iosevka Nerd Font:pixelsize=26"

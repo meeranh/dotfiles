@@ -166,7 +166,7 @@ network_module: &network_module
 # 3E) BACKLIGHT MODULE
 backlight_module: &backlight_module
   backlight:
-    name: amdgpu_bl1
+    name: amdgpu_bl2
     content:
       list:
         spacing: 2

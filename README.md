@@ -27,4 +27,13 @@
 2. Create your users with a home directory
 3. Configure your `wheel` group and other `visudo` settings
 4. Login to your new user account
-5. Run `curl https://raw.githubusercontent.com/meeranh/dotfiles/sway/install.sh | bash`
+5. Run the following commands:
+    ```
+    sudo pacman -S wget
+    wget https://raw.githubusercontent.com/meeranh/dotfiles/sway/install.sh
+    chmod +x install.sh
+    ./install.sh
+    ```
+6. Accept all the prompts, and provide your password when requested
+8. Reboot
+7. Login, and start the Sway session via `s`

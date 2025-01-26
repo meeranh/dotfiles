@@ -22,7 +22,7 @@ cd ..
 rm -rf paru-bin
 
 # Install additional packages via paru
-paru -S yambar caido-cli burpsuite zen-browser-bin xcp virtualfish waydroid \
+paru -S yambar caido-cli burpsuite zen-browser-bin xcp waydroid \
 	python-pyclip subfinder httpx
 
 # Clone dotfiles repository and set up .zshrc
@@ -49,6 +49,9 @@ sudo systemctl enable libvirtd.service
 
 # Set shell to Fish
 chsh -s $(which fish)
+
+# Install virtualfish
+pipx install virtualfish
 
 # Final message
 echo "Package & rice installation completed!"

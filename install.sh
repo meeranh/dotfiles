@@ -12,7 +12,8 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     tldr locate go python-pipx glow ltrace cutter radare2 rz-ghidra r2ghidra \
     libvirt qemu-full qemu-img virt-install virt-manager virt-viewer man swaylock \
 		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go adwaita-icon-theme \
-		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus net-tools \
+		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus \
+		net-tools
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git

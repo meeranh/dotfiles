@@ -4,7 +4,7 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     dunst libnotify wofi zsh fish starship obs-studio xdg-desktop-portal-wlr \
     xdg-desktop-portal wlsunset playerctl grim slurp wl-clipboard yazi \
     trash-cli metasploit nmap gnu-netcat luarocks rust nodejs npm pnpm yarn \
-    python-i3ipc neofetch zathura xdg-utils bluetui imv mpv zoxide pyenv hurl \
+    python-i3ipc neofetch zathura zathura-pdf-mupdf bluetui imv mpv zoxide pyenv hurl \
     nemo btop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
     wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
     proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
@@ -13,7 +13,7 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     libvirt qemu-full qemu-img virt-install virt-manager virt-viewer man swaylock \
 		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go adwaita-icon-theme \
 		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus \
-		net-tools
+		net-tools sqlmap xdg-utils 
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git
@@ -24,7 +24,7 @@ rm -rf paru-bin
 
 # Install additional packages via paru
 paru -S yambar caido-cli burpsuite zen-browser-bin xcp waydroid \
-	python-pyclip subfinder httpx
+	python-pyclip subfinder httpx feroxbuster-bin urlencode
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config

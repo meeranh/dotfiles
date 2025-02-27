@@ -13,7 +13,8 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
     libvirt qemu-full qemu-img virt-install virt-manager virt-viewer man swaylock \
 		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go adwaita-icon-theme \
 		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus \
-		net-tools sqlmap xdg-utils ghidra wireshark-qt
+		net-tools sqlmap xdg-utils ghidra wireshark-qt perl-image-exiftool binwalk \
+		imagemagick
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git
@@ -24,7 +25,7 @@ rm -rf paru-bin
 
 # Install additional packages via paru
 paru -S yambar caido-cli burpsuite zen-browser-bin xcp waydroid \
-	python-pyclip subfinder httpx feroxbuster-bin urlencode
+	python-pyclip subfinder httpx feroxbuster-bin urlencode netexec
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config

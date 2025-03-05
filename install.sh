@@ -14,7 +14,7 @@ sudo pacman -S sway wlroots git base-devel python python-pip make \
 		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go adwaita-icon-theme \
 		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus \
 		net-tools sqlmap xdg-utils ghidra wireshark-qt perl-image-exiftool binwalk \
-		imagemagick hydra smbclient remmina freerdp hashcat pocl
+		imagemagick hydra smbclient remmina freerdp hashcat pocl 7zip
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git

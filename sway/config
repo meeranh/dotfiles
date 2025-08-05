@@ -7,7 +7,7 @@ output eDP-1 mode 1920x1080@144Hz
 set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 
 # Enable if compatability issues
-xwayland disable
+xwayland enable
 
 # Always run scripts
 exec_always yambar
@@ -38,7 +38,8 @@ set $right l
 
 set $term foot
 set $menu wofi
-set $browser zen-browser
+# set $browser 'chromium --force-device-scale-factor=1.25'
+set $browser 'zen-browser'
 
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
@@ -64,6 +65,9 @@ input "1267:12826:ELAN07D2:00_04F3:321A_Touchpad" {
 
     # Start your launcher
     bindsym $mod+r exec $menu
+
+    # Lock
+    bindsym $mod+Mod1+l exec "swaylock -i $HOME/.config/wallpapers/img/GtfoHD.jpg"
 
     # Toggle Yambar
     bindsym $mod+semicolon exec toggleYambar
@@ -99,6 +103,9 @@ input "1267:12826:ELAN07D2:00_04F3:321A_Touchpad" {
 		# Launching the Windows VM
     bindsym $mod+v exec 'toggleWin start'
     bindsym $mod+Shift+v exec 'toggleWin shutdown'
+
+		# Launching the file manager
+		bindsym $mod+e exec 'nemo'
 
 # Moving around:
     # Move your focus around

@@ -26,7 +26,7 @@ rm -rf paru-bin
 # Install additional packages via paru
 paru -S caido-cli burpsuite zen-browser-bin xcp waydroid \
 	python-pyclip subfinder httpx feroxbuster-bin urlencode netexec \
-	ruby-evil-winrm
+	ruby-evil-winrm clockify-cli-bin
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config

@@ -1,5 +1,10 @@
 # Sway configurations
 
+# Dark mode
+set $gnome-schema org.gnome.desktop.interface
+exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
+exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+
 # Monitor
 output eDP-1 mode 1920x1080@144Hz
 
@@ -8,6 +13,9 @@ set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'
 
 # Enable if compatability issues
 xwayland enable
+
+# Export display env vars to systemd so portals work
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Always run scripts
 exec_always yambar
@@ -44,8 +52,8 @@ set $browser 'zen-browser'
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 output * bg ~/.config/wallpapers/img/pinkRose.jpg fill
 
-# Touchpad tap-to-touch
-input "1267:12826:ELAN07D2:00_04F3:321A_Touchpad" {
+# Touchpad tap-to-click
+input type:touchpad {
 	dwt enabled
 	tap enabled
 	middle_emulation enabled

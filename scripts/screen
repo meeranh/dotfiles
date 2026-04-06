@@ -4,7 +4,7 @@
 FILENAME=$(date +%F_%T)
 
 # Screenshots folder
-FOLDER="$HOME/Media/screenshots"
+FOLDER="$HOME/media/screenshots"
 
 # Make screenshot folder
 mkdir -p $FOLDER

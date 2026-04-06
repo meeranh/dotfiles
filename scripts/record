@@ -6,7 +6,7 @@
 # If the argument is "stop" then the recording will stop.
 
 FILENAME=$(date +%F_%T)
-DIRECTORY="$HOME/Media/screenrecords/"
+DIRECTORY="$HOME/media/screenrecords/"
 
 # Make screenshot folder
 mkdir -p $DIRECTORY

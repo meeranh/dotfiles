@@ -18,7 +18,7 @@ xwayland enable
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Always run scripts
-exec_always yambar
+exec_always waybar
 exec_always $spiralcmd
 exec_always screenshareFix
 exec_always dunst
@@ -78,7 +78,7 @@ input type:touchpad {
     bindsym $mod+Mod1+l exec "swaylock -i $HOME/.config/wallpapers/img/GtfoHD.jpg"
 
     # Toggle Yambar
-    bindsym $mod+semicolon exec toggleYambar
+    bindsym $mod+semicolon exec killall -SIGUSR1 waybar
 
     # Increase brightness
     bindsym XF86MonBrightnessUp exec 'brightnessctl s +1%'

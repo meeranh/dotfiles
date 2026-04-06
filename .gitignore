@@ -27,3 +27,5 @@
 !wofi/**
 !yambar/**
 !fish/**
+fish/fish_variables
+fish/conf.d/fish_frozen_*

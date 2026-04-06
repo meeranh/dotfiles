@@ -1,0 +1,146 @@
+[
+  {
+    "output": "eDP-1",
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 7,
+    "modules-left": [
+      "custom/nix",
+      "custom/sep",
+      "custom/prev",
+      "custom/play-pause",
+      "custom/next",
+      "custom/sep",
+      "custom/title"
+    ],
+    "modules-center": [
+      "sway/workspaces"
+    ],
+    "modules-right": [
+      "cpu",
+      "custom/sep",
+      "memory",
+      "custom/sep",
+      "custom/battery",
+      "custom/sep",
+      "pulseaudio",
+      "custom/sep",
+      "network",
+      "custom/sep",
+      "backlight",
+      "custom/sep",
+      "clock",
+      "custom/rec-sep",
+      "custom/rec-icon"
+    ],
+    "custom/nix": {
+      "format": "󱄅 ",
+      "tooltip": false
+    },
+    "custom/sep": {
+      "format": "",
+      "tooltip": false
+    },
+    "custom/prev": {
+      "format": "{}",
+      "exec": "echo ''",
+      "on-click": "playerctl previous",
+      "tooltip": false
+    },
+    "custom/play-pause": {
+      "format": " {} ",
+      "exec": "~/.config/waybar/scripts/play-pause.sh",
+      "on-click": "playerctl play-pause",
+      "tooltip": false
+    },
+    "custom/next": {
+      "format": "{}",
+      "exec": "echo ''",
+      "on-click": "playerctl next",
+      "tooltip": false
+    },
+    "custom/title": {
+      "format": "{}",
+      "exec": "~/.config/waybar/scripts/title.sh",
+      "tooltip": false,
+      "max-length": 35
+    },
+    "cpu": {
+      "format": "<span color='#f7768e'></span>  {usage}%",
+      "interval": 1,
+      "tooltip": false
+    },
+    "memory": {
+      "format": "<span color='#7dcfff'></span>  {percentage}%",
+      "interval": 1,
+      "tooltip": false
+    },
+    "custom/battery": {
+      "format": "{}",
+      "exec": "~/.config/waybar/scripts/battery.sh",
+      "return-type": "json",
+      "tooltip": false
+    },
+    "pulseaudio": {
+      "format": "<span color='#e0af68'></span>  {volume}%",
+      "format-muted": "<span color='#f7768e'></span>  {volume}%",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+      "tooltip": false
+    },
+    "network": {
+      "format-wifi": "<span color='#7aa2f7'> </span> {essid}",
+      "format-disconnected": "<span color='#f7768e'>󰖪 </span>",
+      "tooltip": false
+    },
+    "backlight": {
+      "format": "<span color='#f7768e'></span>  {percent}%",
+      "on-click": "sh -c 'pgrep wlsunset && pkill wlsunset || wlsunset -T 5000 -g 0.7 &'",
+      "on-scroll-up": "brightnessctl set +1%",
+      "on-scroll-down": "brightnessctl set 1%-",
+      "tooltip": false
+    },
+    "clock": {
+      "format": "{:%I:%M %p}",
+      "tooltip": false
+    },
+    "custom/rec-sep": {
+      "exec": "~/.config/waybar/scripts/recording.sh sep",
+      "interval": 1,
+      "tooltip": false
+    },
+    "custom/rec-icon": {
+      "format": "<span color='#f7768e'>{}</span>",
+      "exec": "~/.config/waybar/scripts/recording.sh icon",
+      "interval": 1,
+      "tooltip": false
+    },
+    "sway/workspaces": {
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+        "focused": "󰮯 ",
+        "persistent": "󰑊 ",
+        "default": "󰊠 ",
+        "urgent": "󰊠 "
+      },
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": []
+      }
+    }
+  }
+]

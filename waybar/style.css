@@ -1,0 +1,88 @@
+* {
+    font-family: "Iosevka Nerd Font";
+    font-size: 18px;
+    color: #c0caf5;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: #1a1b26;
+}
+
+.modules-left {
+    padding-left: 20px;
+}
+
+.modules-right {
+    padding-right: 20px;
+}
+
+#custom-nix {
+    color: #7dcfff;
+    font-size: 22px;
+}
+
+#custom-sep, #custom-rec-sep {
+    color: #f7768e;
+}
+
+#custom-prev, #custom-next {
+    color: #7aa2f7;
+}
+
+#custom-play-pause {
+    color: #9ece6a;
+}
+
+#custom-title {
+    color: #c0caf5;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    font-size: 21px;
+    background: transparent;
+    color: #9d7cd8;
+    transition: none;
+}
+
+#workspaces button label {
+    font-size: 21px;
+    color: inherit;
+}
+
+#workspaces button:not(.empty):not(.focused) {
+    color: #7aa2f7;
+}
+
+#workspaces button.focused {
+    color: #e0af68;
+}
+
+#workspaces button.urgent {
+    color: #f7768e;
+}
+
+#cpu, #memory, #pulseaudio, #network, #backlight, #clock {
+    color: #c0caf5;
+}
+
+#custom-battery {
+    color: #f7768e;
+}
+
+#custom-battery.charging {
+    color: #9ece6a;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+#custom-rec-icon {
+    font-size: 22px;
+    padding-right: 5px;
+    animation: blink 0.5s linear infinite alternate;
+}

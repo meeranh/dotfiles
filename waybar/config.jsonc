@@ -38,7 +38,7 @@
       "custom/rec-icon"
     ],
     "custom/nix": {
-      "format": "󱄅 ",
+      "format": "󰣇 ",
       "tooltip": false
     },
     "custom/sep": {

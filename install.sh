@@ -1,17 +1,17 @@
 # Install packages via Pacman
-sudo pacman -S sway wlroots git base-devel python python-pip make \
+sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
     cargo python-virtualenv pipewire wf-recorder swaybg neovim vim sudo foot \
     dunst libnotify wofi zsh fish starship obs-studio xdg-desktop-portal-wlr \
-    xdg-desktop-portal wlsunset playerctl grim slurp wl-clipboard yazi \
-    trash-cli metasploit nmap gnu-netcat luarocks rust nodejs npm pnpm yarn \
-    python-i3ipc neofetch zathura zathura-pdf-mupdf bluetui imv mpv zoxide pyenv hurl \
+    xdg-desktop-portal xdg-desktop-portal-gtk wlsunset playerctl grim slurp wl-clipboard yazi \
+    trash-cli metasploit nmap luarocks rust nodejs npm pnpm yarn \
+    python-i3ipc zathura zathura-pdf-mupdf bluetui imv mpv zoxide pyenv hurl \
     nemo btop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
-    wlsunset wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
-    proxychains-ng v2ray github-cli bluez bluez-utils bluetui openvpn cloudflared \
+    wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
+    proxychains-ng v2ray github-cli bluez bluez-utils openvpn cloudflared \
     docker docker-compose wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
     tldr locate go python-pipx glow ltrace rz-cutter radare2 rz-ghidra r2ghidra \
-    libvirt qemu-full qemu-img virt-install virt-manager virt-viewer man swaylock \
-		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned go adwaita-icon-theme \
+    libvirt qemu-full qemu-img virt-install virt-manager virt-viewer man \
+		edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned adwaita-icon-theme \
 		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus \
 		net-tools sqlmap xdg-utils ghidra wireshark-qt perl-image-exiftool binwalk \
 		imagemagick hydra smbclient remmina freerdp hashcat pocl 7zip

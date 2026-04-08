@@ -20,11 +20,10 @@ while true; do
     else icon="  "
     fi
 
-    if [ "$state0" = "Charging" ] || [ "$state0" = "Full" ] || \
-       [ "$state1" = "Charging" ] || [ "$state1" = "Full" ]; then
-        class="charging"
-    else
+    if [ "$state0" = "Discharging" ] || [ "$state1" = "Discharging" ]; then
         class="discharging"
+    else
+        class="charging"
     fi
 
     echo "{\"text\": \"$icon<span color='#c0caf5'>$display</span>\", \"class\": \"$class\"}"

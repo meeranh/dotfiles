@@ -15,6 +15,7 @@
 !wallpapers/
 !wofi/
 !waybar/
+!eww/
 !fish/
 
 # Ensure files inside the allowed directories are included
@@ -26,6 +27,7 @@
 !wallpapers/**
 !wofi/**
 !waybar/**
+!eww/**
 !fish/**
 fish/fish_variables
 fish/conf.d/fish_frozen_*

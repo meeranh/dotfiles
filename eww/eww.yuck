@@ -1,0 +1,146 @@
+;; ============================================================
+;; VARIABLES
+;; ============================================================
+
+(deflisten workspaces-raw :initial "[]"
+  `~/.config/eww/scripts/workspaces.sh`)
+
+(deflisten play-pause-icon :initial ""
+  `~/.config/eww/scripts/play-pause.sh`)
+
+(deflisten title :initial "Not Playing"
+  `~/.config/eww/scripts/title.sh`)
+
+(defpoll volume :interval "1s"
+  `pactl get-sink-volume @DEFAULT_SINK@ | awk -F/ '{print $2}' | tr -dc 0-9`)
+
+(defpoll volume-muted :interval "1s"
+  `pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //'`)
+
+(defpoll network-name :interval "5s"
+  `nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2`)
+
+(defpoll backlight :interval "1s"
+  `brightnessctl -m 2>/dev/null | awk -F, '{print $4}' | tr -d '%'`)
+
+(defpoll battery-text :interval "5s"
+  `~/.config/eww/scripts/battery.sh text`)
+
+(defpoll battery-icon :interval "5s"
+  `~/.config/eww/scripts/battery.sh icon`)
+
+(defpoll battery-charging :interval "5s"
+  `~/.config/eww/scripts/battery.sh charging`)
+
+(defpoll rec-active :interval "1s"
+  `pgrep -x wf-recorder > /dev/null && echo "true" || echo "false"`)
+
+;; ============================================================
+;; WIDGETS
+;; ============================================================
+
+(defwidget arch []
+  (label :class "arch-icon" :text "󰣇 "))
+
+(defwidget sep []
+  (label :class "sep" :text ""))
+
+(defwidget sep-left []
+  (label :class "sep-left" :text ""))
+
+(defwidget media-controls []
+  (box :orientation "h" :space-evenly false :spacing 0
+    (button :class "media-prev" :onclick "playerctl previous"
+      (label :text ""))
+    (button :class "media-play" :onclick "playerctl play-pause"
+      (label :text play-pause-icon))
+    (button :class "media-next" :onclick "playerctl next"
+      (label :text ""))))
+
+(defwidget title-widget []
+  (label :class "title" :text title :limit-width 35))
+
+(defwidget cpu []
+  (box :orientation "h" :space-evenly false :spacing 6
+    (label :class "cpu-icon" :text " ")
+    (label :class "module-text" :text "${round(EWW_CPU.avg, 0)}%")))
+
+(defwidget memory []
+  (box :orientation "h" :space-evenly false :spacing 6
+    (label :class "mem-icon" :text " ")
+    (label :class "module-text" :text "${round(EWW_RAM.used_mem_perc, 0)}%")))
+
+(defwidget battery []
+  (box :orientation "h" :space-evenly false :spacing 6
+       :class {battery-charging == "true" ? "battery-charging" : "battery-discharging"}
+    (label :class "battery-icon" :text battery-icon)
+    (label :class "module-text" :text battery-text)))
+
+(defwidget vol []
+  (eventbox :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+            :onscroll "~/.config/eww/scripts/volume-scroll.sh {}"
+    (box :orientation "h" :space-evenly false :spacing 6
+      (label :class "vol-icon" :text {volume-muted == "yes" ? " " : " "})
+      (label :class "module-text" :text "${volume}%"))))
+
+(defwidget network []
+  (box :orientation "h" :space-evenly false :spacing 6
+    (label :class "net-icon" :text {network-name == "" ? "󰖪 " : " "})
+    (label :class "module-text" :text network-name)))
+
+(defwidget bright []
+  (eventbox :onscroll "~/.config/eww/scripts/brightness-scroll.sh {}"
+            :onclick "sh -c 'pgrep wlsunset && pkill wlsunset || wlsunset -T 5000 -g 0.7 &'"
+    (box :orientation "h" :space-evenly false :spacing 6
+      (label :class "bright-icon" :text " ")
+      (label :class "module-text" :text "${backlight}%"))))
+
+(defwidget clock []
+  (label :class "clock" :text {formattime(EWW_TIME, "%I:%M %p")}))
+
+(defwidget recording []
+  (box :orientation "h" :space-evenly false :visible {rec-active == "true"}
+    (label :class "rec-sep" :text "")
+    (label :class "rec-icon" :text "󰑊")))
+
+(defwidget workspaces []
+  (box :class "workspaces" :orientation "h" :space-evenly false :spacing 0
+    (for ws in workspaces-raw
+      (button :class "ws ws-${ws.state}"
+              :onclick "if pgrep -x sway >/dev/null; then swaymsg workspace ${ws.name}; else i3-msg workspace ${ws.name}; fi"
+        (label :text "${ws.icon}")))))
+
+;; ============================================================
+;; BAR LAYOUT
+;; ============================================================
+
+(defwidget bar-left []
+  (box :orientation "h" :space-evenly false :halign "start" :spacing 7
+    (arch) (sep-left) (media-controls) (sep-left) (title-widget)))
+
+(defwidget bar-center []
+  (box :orientation "h" :space-evenly false :halign "center"
+    (workspaces)))
+
+(defwidget bar-right []
+  (box :orientation "h" :space-evenly false :halign "end" :spacing 3
+    (cpu) (sep) (memory) (sep) (battery) (sep) (vol) (sep) (network) (sep) (bright) (sep) (clock) (recording)))
+
+(defwidget bar []
+  (centerbox :orientation "h" :class "bar"
+    (bar-left)
+    (bar-center)
+    (bar-right)))
+
+;; ============================================================
+;; WINDOW
+;; ============================================================
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%" :y "0%" :width "100%" :height "35px"
+                      :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  :namespace "eww-bar"
+  (bar))

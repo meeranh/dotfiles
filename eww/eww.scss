@@ -1,0 +1,121 @@
+// Tokyo Night palette
+$bg:      #1a1b26;
+$fg:      #c0caf5;
+$red:     #f7768e;
+$green:   #9ece6a;
+$yellow:  #e0af68;
+$blue:    #7aa2f7;
+$cyan:    #7dcfff;
+$purple:  #9d7cd8;
+$arch:    #0A9CF5;
+
+* {
+    all: unset;
+    font-family: "Iosevka Nerd Font";
+    font-size: 18px;
+}
+
+.bar {
+    background-color: $bg;
+    color: $fg;
+    padding: 0px 20px;
+}
+
+// Separator
+.sep {
+    color: $red;
+    padding: 0 3px;
+}
+
+.sep-left {
+    color: $red;
+    padding: 0 1px;
+}
+
+// Arch logo
+.arch-icon {
+    color: $arch;
+    font-size: 20px;
+}
+
+// Media controls
+.media-prev {
+    color: $blue;
+    padding: 0 6px 0 2px;
+}
+
+.media-next {
+    color: $blue;
+    padding: 0 2px 0 6px;
+}
+
+.media-play {
+    color: $green;
+    padding: 0 8px;
+}
+
+// Title
+.title {
+    color: $fg;
+}
+
+// Module icons
+.cpu-icon    { color: $red; margin-right: 2px; font-size: 19px; }
+.mem-icon    { color: $cyan; margin-right: 2px; font-size: 19px; }
+.vol-icon    { color: $yellow; margin-right: 2px; font-size: 19px; }
+.net-icon    { color: $blue; margin-right: 2px; font-size: 19px; }
+.bright-icon { color: $red; margin-right: 2px; font-size: 19px; }
+
+// Battery
+.battery-icon {
+    color: $red;
+    margin-right: 2px;
+    font-size: 19px;
+}
+
+.battery-charging .battery-icon {
+    color: $green;
+}
+
+// Clock
+.clock {
+    color: $fg;
+}
+
+// Workspaces
+.workspaces {
+    padding: 0 4px;
+}
+
+.ws {
+    font-size: 20px;
+    padding: 0 6px;
+    background: transparent;
+
+    label {
+        font-size: 20px;
+    }
+}
+
+.ws-empty   { color: $purple; }
+.ws-occupied { color: $blue; }
+.ws-focused  { color: $yellow; }
+.ws-urgent   { color: $red; }
+
+// Recording
+.rec-sep {
+    color: $red;
+    padding: 0 3px;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.rec-icon {
+    color: $red;
+    font-size: 22px;
+    padding-right: 5px;
+    animation: blink 0.5s linear infinite alternate;
+}

@@ -59,7 +59,7 @@
     },
     "custom/next": {
       "format": "{}",
-      "exec": "echo ''",
+      "exec": "echo ''",
       "on-click": "playerctl next",
       "tooltip": false
     },

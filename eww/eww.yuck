@@ -55,7 +55,7 @@
     (button :class "media-play" :onclick "playerctl play-pause"
       (label :text play-pause-icon))
     (button :class "media-next" :onclick "playerctl next"
-      (label :text ""))))
+      (label :text ""))))
 
 (defwidget title-widget []
   (label :class "title" :text title :limit-width 35))

@@ -34,6 +34,8 @@ exec_always setxkbmap -option caps:escape
 
 # Touchpad tap-to-click
 exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Enabled" 1
+exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Drag Enabled" 1
+exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Drag Lock Enabled" 1
 exec_always xinput set-prop "Synaptics TM3276-022" "libinput Disable While Typing Enabled" 1
 exec_always xinput set-prop "Synaptics TM3276-022" "libinput Middle Emulation Enabled" 1
 

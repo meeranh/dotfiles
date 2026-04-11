@@ -1,14 +1,21 @@
 #!/bin/bash
 
-# This script will use scrot/grim to take a screenshot of the current screen based on the current compositor
 FILENAME=$(date +%F_%T)
-
-# Screenshots folder
 FOLDER="$HOME/media/screenshots"
-
-# Make screenshot folder
 mkdir -p $FOLDER
 
-grim -g "$(slurp)" - | wl-copy && wl-paste -t image/png > "$FOLDER/$FILENAME.png"
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    if [ "$1" = "full" ]; then
+        grim - | wl-copy && wl-paste -t image/png > "$FOLDER/$FILENAME.png"
+    else
+        grim -g "$(slurp)" - | wl-copy && wl-paste -t image/png > "$FOLDER/$FILENAME.png"
+    fi
+else
+    if [ "$1" = "full" ]; then
+        flameshot full -p "$FOLDER" -c
+    else
+        flameshot gui -p "$FOLDER" -c
+    fi
+fi
+
 dunstify "📸 Captured screenshot"
-exit 0

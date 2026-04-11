@@ -12,14 +12,29 @@ DIRECTORY="$HOME/media/screenrecords/"
 mkdir -p $DIRECTORY
 
 if [ "$1" = "start" ]; then
-	# Start recording
+	touch /tmp/recording
 	dunstify "🔴 Recording Started"
-	wf-recorder --file="$DIRECTORY/$FILENAME.mp4"
-
+	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+		if [ "$2" = "audio" ]; then
+			wf-recorder --audio --file="$DIRECTORY/$FILENAME.mp4"
+		else
+			wf-recorder --file="$DIRECTORY/$FILENAME.mp4"
+		fi
+	else
+		if [ "$2" = "audio" ]; then
+			ffmpeg -f x11grab -i "$DISPLAY" -f pulse -i default "$DIRECTORY/$FILENAME.mp4" &
+		else
+			ffmpeg -f x11grab -i "$DISPLAY" "$DIRECTORY/$FILENAME.mp4" &
+		fi
+	fi
 fi
 
 if [ "$1" = "stop" ]; then
-	# Stop recording
+	rm -f /tmp/recording
 	dunstify "🔴 Recording Stopped"
-	killall wf-recorder
+	if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+		killall wf-recorder
+	else
+		killall ffmpeg
+	fi
 fi

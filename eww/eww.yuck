@@ -87,7 +87,8 @@
 
 (defwidget bright []
   (eventbox :onscroll "~/.config/eww/scripts/brightness-scroll.sh {}"
-            :onclick "sh -c 'pgrep wlsunset && pkill wlsunset || wlsunset -T 5000 -g 0.7 &'"
+            :onclick "~/.config/eww/scripts/nightlight-toggle.sh"
+            :onrightclick "~/.config/eww/scripts/nightlight-toggle.sh reset"
     (box :orientation "h" :space-evenly false :spacing 6
       (label :class "bright-icon" :text " ")
       (label :class "module-text" :text "${backlight}%"))))

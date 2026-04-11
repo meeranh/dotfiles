@@ -16,6 +16,9 @@
 !wofi/
 !waybar/
 !eww/
+!i3/
+!kitty/
+!rofi/
 !fish/
 
 # Ensure files inside the allowed directories are included
@@ -28,6 +31,8 @@
 !wofi/**
 !waybar/**
 !eww/**
+!i3/**
+!rofi/**
 !fish/**
 fish/fish_variables
 fish/conf.d/fish_frozen_*

@@ -80,31 +80,31 @@ set $browser 'zen-browser'
     bindsym $mod+r exec --no-startup-id $menu
 
     # Lock
-    bindsym $mod+Mod1+l exec "i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png"
+    bindsym $mod+Mod1+l exec --no-startup-id "i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png"
 
     # Toggle bar
-    bindsym $mod+semicolon exec "eww close bar 2>/dev/null && exit 0; eww open bar"
+    bindsym $mod+semicolon exec --no-startup-id "eww close bar 2>/dev/null && exit 0; eww open bar"
 
     # Increase brightness
-    bindsym XF86MonBrightnessUp exec 'brightnessctl s +1%'
-    bindsym XF86MonBrightnessDown exec 'brightnessctl s 1%-'
+    bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +1%
+    bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 1%-
 
     # Volume control
-    bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume 0 +5%'
-    bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume 0 -5%'
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 
     # Screenshots (selection by default)
-    bindsym Print exec screen
+    bindsym Print exec --no-startup-id screen
 
     # Screen recording
-    bindsym $mod+Print exec record start
-    bindsym $mod+Shift+Print exec record stop
+    bindsym $mod+Print exec --no-startup-id record start
+    bindsym $mod+Shift+Print exec --no-startup-id record stop
 
     # Music and sound
-    bindsym $mod+m exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
-    bindsym $mod+space exec 'playerctl play-pause'
-    bindsym $mod+n exec 'playerctl next'
-    bindsym $mod+p exec 'playerctl previous'
+    bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym $mod+space exec --no-startup-id playerctl play-pause
+    bindsym $mod+n exec --no-startup-id playerctl next
+    bindsym $mod+p exec --no-startup-id playerctl previous
 
     # Drag floating windows
     floating_modifier $mod
@@ -116,8 +116,8 @@ set $browser 'zen-browser'
     bindsym $mod+x exec 'i3-msg exit'
 
     # Launching the Windows VM
-    bindsym $mod+v exec 'toggleWin start'
-    bindsym $mod+Shift+v exec 'toggleWin shutdown'
+    bindsym $mod+v exec --no-startup-id toggleWin start
+    bindsym $mod+Shift+v exec --no-startup-id toggleWin shutdown
 
     # Launching the file manager
     bindsym $mod+e exec --no-startup-id 'nemo'

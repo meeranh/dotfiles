@@ -1,0 +1,43 @@
+[font]
+size = 12
+
+[font.normal]
+family = "Iosevka NF"
+
+[scrolling]
+history = 5000
+
+[window]
+padding = { x = 4, y = 4 }
+
+[colors.primary]
+foreground = "#cdd6f4"
+background = "#1e1e2e"
+
+[colors.cursor]
+text = "#11111b"
+cursor = "#f5e0dc"
+
+[colors.selection]
+text = "#cdd6f4"
+background = "#414356"
+
+[colors.normal]
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#bac2de"
+
+[colors.bright]
+black = "#585b70"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"

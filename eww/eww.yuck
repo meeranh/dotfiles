@@ -2,8 +2,8 @@
 ;; VARIABLES
 ;; ============================================================
 
-(deflisten workspaces-raw :initial "[]"
-  `~/.config/eww/scripts/workspaces.sh`)
+(deflisten workspaces-raw :initial "[{}]"
+  `python3 ~/.config/eww/scripts/workspaces.py`)
 
 (deflisten play-pause-icon :initial ""
   `~/.config/eww/scripts/play-pause.sh`)
@@ -33,7 +33,7 @@
   `~/.config/eww/scripts/battery.sh charging`)
 
 (defpoll rec-active :interval "1s"
-  `pgrep -x wf-recorder > /dev/null && echo "true" || echo "false"`)
+  `[ -f /tmp/recording ] && echo "true" || echo "false"`)
 
 ;; ============================================================
 ;; WIDGETS
@@ -141,6 +141,7 @@
   :geometry (geometry :x "0%" :y "0%" :width "100%" :height "35px"
                       :anchor "top center")
   :stacking "fg"
+  :reserve (struts :distance "35px" :side "top")
   :exclusive true
   :namespace "eww-bar"
   (bar))

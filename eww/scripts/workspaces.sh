@@ -29,6 +29,12 @@ get_workspaces() {
 
 get_workspaces
 
-$WM_MSG -t subscribe '["workspace"]' --monitor 2>/dev/null | while read -r _; do
+if [ "$WM_MSG" = "swaymsg" ]; then
+    MONITOR_FLAG="--monitor"
+else
+    MONITOR_FLAG="-m"
+fi
+
+$WM_MSG -t subscribe '["workspace"]' $MONITOR_FLAG 2>/dev/null | while read -r _; do
     get_workspaces
 done

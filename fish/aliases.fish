@@ -17,10 +17,11 @@ function lock
     if test "$XDG_SESSION_TYPE" = "wayland"
         swaylock -i $HOME/.config/wallpapers/img/GtfoHD.jpg
     else
-        i3lock -i $HOME/.config/wallpapers/img/GtfoHD.png
+        i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png
     end
 end
 alias s "env WLR_DRM_NO_ATOMIC=1 sway --unsupported-gpu"
+alias x "startx /usr/bin/i3"
 alias caido "caido-cli -l 0.0.0.0:8080"
 alias l "ls --color=auto"
 alias pq "proxychains -q"

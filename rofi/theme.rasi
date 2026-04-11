@@ -1,17 +1,19 @@
 * {
-    bg:       #1A1B26;
-    fg:       #F1F1F1;
-    accent:   #7AA2F7;
-    border:   #34404C;
-    selected: #7AA2F7;
+    bg: #1A1B26;
+    fg: #F1F1F1;
+    accent: #7AA2F7;
+    border-col: rgb(52, 64, 76);
+    font: "Iosevka Nerd Font 14";
 }
 
 window {
     width: 30%;
+    height: 50%;
+    location: center;
+    anchor: center;
     border: 1px solid;
     border-color: @fg;
     background-color: @bg;
-    padding: 0;
 }
 
 mainbox {
@@ -21,50 +23,44 @@ mainbox {
 
 inputbar {
     background-color: @bg;
-    border: 0 0 2px 0;
-    border-color: @border;
-    margin: 15px 15px 0 15px;
+    border: 2px solid;
+    border-color: @border-col;
+    margin: 15px;
     padding: 8px;
-    children: [ prompt, entry ];
-}
-
-prompt {
-    background-color: transparent;
-    text-color: @fg;
-    margin: 0 8px 0 0;
+    children: [ entry ];
 }
 
 entry {
-    background-color: transparent;
+    background-color: @bg;
     text-color: @fg;
-    placeholder: "Search...";
-    placeholder-color: #565f89;
+    placeholder: "";
 }
 
 listview {
     background-color: @bg;
-    lines: 10;
-    columns: 1;
-    fixed-height: false;
-    margin: 5px 15px 15px 15px;
     scrollbar: false;
+    margin: 0 15px 15px 15px;
+    columns: 1;
+    fixed-height: true;
 }
 
 element {
     background-color: transparent;
     text-color: @fg;
-    padding: 6px 15px;
+    padding: 4px 15px;
     margin: 1px 0;
 }
 
 element selected {
-    background-color: @selected;
+    background-color: @accent;
     text-color: @bg;
+    border-radius: 0;
 }
 
 element-icon {
     size: 24px;
     margin: 0 10px 0 0;
+    background-color: transparent;
 }
 
 element-text {

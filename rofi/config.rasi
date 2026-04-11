@@ -2,10 +2,10 @@ configuration {
     show-icons: true;
     icon-theme: "Adwaita";
     terminal: "kitty";
-    modi: "drun,run";
-    display-drun: "Apps";
+    modi: "drun";
     drun-display-format: "{name}";
-    font: "Iosevka Nerd Font 20";
+    font: "Iosevka Nerd Font 14";
+    display-drun: "";
 }
 
 @theme "~/.config/rofi/theme.rasi"

@@ -12,9 +12,9 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     fi
 else
     if [ "$1" = "full" ]; then
-        flameshot full -p "$FOLDER" -c
+        shotgun "$FOLDER/$FILENAME.png" && xclip -selection clipboard -t image/png "$FOLDER/$FILENAME.png"
     else
-        flameshot gui -p "$FOLDER" -c
+        shotgun $(hacksaw -f "-i %i -g %g") "$FOLDER/$FILENAME.png" && xclip -selection clipboard -t image/png "$FOLDER/$FILENAME.png"
     fi
 fi
 

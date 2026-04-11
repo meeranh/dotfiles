@@ -15,7 +15,7 @@ sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
 		lzip csvlens bat jq htop gitleaks bind kdeconnect sshfs python-nautilus \
 		net-tools sqlmap xdg-utils ghidra wireshark-qt perl-image-exiftool binwalk \
 		imagemagick hydra smbclient remmina freerdp hashcat pocl 7zip waybar inotify-tools \
-		i3-wm kitty rofi picom feh maim i3lock xclip xdotool
+		i3-wm kitty rofi flameshot feh maim i3lock xclip xdotool xorg-xinit xorg-server xorg-xinput ly picom
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git
@@ -41,7 +41,7 @@ systemctl --user enable pipewire wireplumber xdg-desktop-portal xdg-desktop-port
 systemctl --user start pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr
 
 # Enable system-wide services
-sudo systemctl enable bluetooth.service docker.service NetworkManager.service
+sudo systemctl enable bluetooth.service docker.service NetworkManager.service ly@tty2.service
 sudo systemctl start bluetooth.service docker.service NetworkManager.service
 
 # Enable virtualization services

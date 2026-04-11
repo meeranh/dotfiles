@@ -11,17 +11,14 @@
 (deflisten title :initial "Not Playing"
   `~/.config/eww/scripts/title.sh`)
 
-(defpoll volume :interval "1s"
-  `pactl get-sink-volume @DEFAULT_SINK@ | awk -F/ '{print $2}' | tr -dc 0-9`)
+(defvar volume 0)
 
-(defpoll volume-muted :interval "1s"
-  `pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //'`)
+(defvar volume-muted "no")
 
 (defpoll network-name :interval "5s"
   `nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2`)
 
-(defpoll backlight :interval "1s"
-  `brightnessctl -m 2>/dev/null | awk -F, '{print $4}' | tr -d '%'`)
+(defvar backlight 0)
 
 (defpoll battery-text :interval "5s"
   `~/.config/eww/scripts/battery.sh text`)

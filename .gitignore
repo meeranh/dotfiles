@@ -8,6 +8,7 @@
 !README.md
 
 # Un-ignore specific directories and their contents
+!alacritty/
 !dunst/
 !foot/
 !scripts/
@@ -22,6 +23,7 @@
 !fish/
 
 # Ensure files inside the allowed directories are included
+!alacritty/**
 !dunst/**
 !foot/**
 !kitty/**

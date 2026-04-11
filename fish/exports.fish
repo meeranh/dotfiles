@@ -10,8 +10,13 @@ set -gx GDK_DPI_SCALE 1.25
 
 # Others
 set -gx XKB_DEFAULT_OPTIONS caps:escape
-set -gx XDG_CURRENT_DESKTOP sway
-set -gx MOZ_ENABLE_WAYLAND 1
+if test "$XDG_SESSION_TYPE" = "wayland"
+    set -gx XDG_CURRENT_DESKTOP sway
+    set -gx MOZ_ENABLE_WAYLAND 1
+else
+    set -gx XDG_CURRENT_DESKTOP i3
+    set -gx GTK_THEME Adwaita:dark
+end
 set -gx GOPATH $HOME/.go
 set -gx EDITOR nvim
 set -gx ELECTRON_OZONE_PLATFORM_HINT auto

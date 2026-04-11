@@ -4,6 +4,7 @@
 set $gnome-schema org.gnome.desktop.interface
 exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
 exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+exec_always --no-startup-id xdg-desktop-portal-gtk &
 
 # Monitor
 exec xrandr --output eDP-1 --mode 1920x1080 --rate 144
@@ -13,6 +14,8 @@ set $spiralcmd python3 ~/.config/i3/scripts/spiral_layout.py
 
 # Always run
 exec_always --no-startup-id eww kill; eww daemon && eww open bar
+exec_always --no-startup-id pkill -f volume-listen; ~/.config/eww/scripts/volume-listen.sh &
+exec_always --no-startup-id pkill -f brightness-listen; ~/.config/eww/scripts/brightness-listen.sh &
 exec_always --no-startup-id $spiralcmd
 exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc-x11
 
@@ -86,12 +89,12 @@ set $browser 'zen-browser'
     bindsym $mod+semicolon exec --no-startup-id "eww close bar 2>/dev/null && exit 0; eww open bar"
 
     # Increase brightness
-    bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +1%
-    bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 1%-
+    bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl s +1% && eww update backlight=$(brightnessctl -m | awk -F, '{print $4}' | tr -d '%')"
+    bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 1%- && eww update backlight=$(brightnessctl -m | awk -F, '{print $4}' | tr -d '%')"
 
     # Volume control
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+    bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5% && eww update volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk -F/ '{print $2}' | tr -dc 0-9)"
+    bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5% && eww update volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk -F/ '{print $2}' | tr -dc 0-9)"
 
     # Screenshots (selection by default)
     bindsym Print exec --no-startup-id screen
@@ -101,7 +104,7 @@ set $browser 'zen-browser'
     bindsym $mod+Shift+Print exec --no-startup-id record stop
 
     # Music and sound
-    bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym $mod+m exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle && sleep 0.05 && eww update volume-muted=$(pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //')"
     bindsym $mod+space exec --no-startup-id playerctl play-pause
     bindsym $mod+n exec --no-startup-id playerctl next
     bindsym $mod+p exec --no-startup-id playerctl previous

@@ -9,16 +9,28 @@ exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 exec xrandr --output eDP-1 --mode 1920x1080 --rate 144
 
 # Spiral layout script (python-i3ipc package required)
-set $spiralcmd 'python3 ~/.config/i3/scripts/spiral_layout.py'
+set $spiralcmd python3 ~/.config/i3/scripts/spiral_layout.py
 
 # Always run
 exec_always --no-startup-id eww kill; eww daemon && eww open bar
 exec_always --no-startup-id $spiralcmd
-exec_always --no-startup-id dunst
-exec_always --no-startup-id picom -b
+exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc-x11
+
+# Compositor (glx backend, no effects — fixes input lag and pixel artifacts)
+exec --no-startup-id picom -b
+
+# Pre-warm kitty server (launch on scratchpad so it's hidden)
+exec --no-startup-id kitty --single-instance --class kitty-warmup
+for_window [class="kitty-warmup"] move scratchpad
 
 # Wallpaper
 exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/img/pinkRose.jpg
+
+# Disable startup notification cursor (loading spinner)
+exec --no-startup-id xsetroot -cursor_name left_ptr
+
+# Caps Lock to Escape
+exec_always setxkbmap -option caps:escape
 
 # Touchpad tap-to-click
 exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Enabled" 1
@@ -46,7 +58,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term kitty --single-instance
 set $menu rofi -show drun
 set $browser 'zen-browser'
 
@@ -54,19 +66,19 @@ set $browser 'zen-browser'
 
 # Basics:
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec --no-startup-id $term
 
     # Open your browser
-    bindsym $mod+b exec $browser
+    bindsym $mod+b exec --no-startup-id $browser
 
     # Kill focused window
     bindsym $mod+w kill
 
     # Start your launcher
-    bindsym $mod+r exec $menu
+    bindsym $mod+r exec --no-startup-id $menu
 
     # Lock
-    bindsym $mod+Mod1+l exec "i3lock -i $HOME/.config/wallpapers/img/GtfoHD.png"
+    bindsym $mod+Mod1+l exec "i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png"
 
     # Toggle bar
     bindsym $mod+semicolon exec "eww close bar 2>/dev/null && exit 0; eww open bar"
@@ -79,9 +91,12 @@ set $browser 'zen-browser'
     bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume 0 +5%'
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume 0 -5%'
 
-    # Screenshots
-    bindsym Print exec 'maim ~/media/screenshots/$(date +%F_%T).png'
-    bindsym $mod+Print exec 'maim -s ~/media/screenshots/$(date +%F_%T).png'
+    # Screenshots (selection by default)
+    bindsym Print exec screen
+
+    # Screen recording
+    bindsym $mod+Print exec record start
+    bindsym $mod+Shift+Print exec record stop
 
     # Music and sound
     bindsym $mod+m exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
@@ -103,7 +118,7 @@ set $browser 'zen-browser'
     bindsym $mod+Shift+v exec 'toggleWin shutdown'
 
     # Launching the file manager
-    bindsym $mod+e exec 'nemo'
+    bindsym $mod+e exec --no-startup-id 'nemo'
 
 # Moving around:
     # Move your focus around

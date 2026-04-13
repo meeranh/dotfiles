@@ -12,6 +12,8 @@
   `~/.config/eww/scripts/title.sh`)
 
 (defvar volume 0)
+(deflisten _volume-listener :initial ""
+  `~/.config/eww/scripts/volume-listen.sh`)
 
 (defvar volume-muted "no")
 
@@ -19,6 +21,8 @@
   `nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2`)
 
 (defvar backlight 0)
+(deflisten _backlight-listener :initial ""
+  `~/.config/eww/scripts/brightness-listen.sh`)
 
 (defpoll battery-text :interval "5s"
   `~/.config/eww/scripts/battery.sh text`)
@@ -125,10 +129,14 @@
     (cpu) (sep) (memory) (sep) (battery) (sep) (vol) (sep) (network) (sep) (bright) (sep) (clock) (recording)))
 
 (defwidget bar []
-  (centerbox :orientation "h" :class "bar"
-    (bar-left)
-    (bar-center)
-    (bar-right)))
+  (box :orientation "h" :class "bar" :hexpand true
+    ;; Hidden labels to keep deflisten scripts alive
+    (label :visible false :text "${_volume-listener}")
+    (label :visible false :text "${_backlight-listener}")
+    (centerbox :orientation "h" :hexpand true
+      (bar-left)
+      (bar-center)
+      (bar-right))))
 
 ;; ============================================================
 ;; WINDOW

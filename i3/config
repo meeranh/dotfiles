@@ -14,8 +14,6 @@ set $spiralcmd python3 ~/.config/i3/scripts/spiral_layout.py
 
 # Always run
 exec_always --no-startup-id eww kill; eww daemon && eww open bar
-exec_always --no-startup-id pkill -f volume-listen; ~/.config/eww/scripts/volume-listen.sh &
-exec_always --no-startup-id pkill -f brightness-listen; ~/.config/eww/scripts/brightness-listen.sh &
 exec_always --no-startup-id $spiralcmd
 exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc-x11
 

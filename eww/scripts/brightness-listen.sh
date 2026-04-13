@@ -7,6 +7,7 @@ BRIGHTNESS_FILE=$(find /sys/class/backlight -name "actual_brightness" 2>/dev/nul
 get_brightness() {
     val=$(brightnessctl -m 2>/dev/null | awk -F, '{print $4}' | tr -d '%')
     eww update backlight="$val" 2>/dev/null
+    echo "$val"
 }
 
 # Push initial value

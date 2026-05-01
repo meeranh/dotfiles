@@ -16,7 +16,7 @@ sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
 		net-tools sqlmap xdg-utils ghidra wireshark-qt perl-image-exiftool binwalk \
 		imagemagick hydra smbclient remmina freerdp hashcat pocl 7zip waybar inotify-tools \
 		i3-wm kitty rofi shotgun hacksaw feh maim i3lock xclip xdotool xorg-xinit xorg-server \
-		xorg-xinput ly picom redshift bun obsidian
+		xorg-xinput ly picom redshift bun obsidian sshpass
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru-bin.git
@@ -28,7 +28,8 @@ rm -rf paru-bin
 # Install additional packages via paru
 paru -S caido-cli burpsuite zen-browser-bin xcp waydroid \
 	python-pyclip subfinder httpx feroxbuster-bin urlencode netexec \
-	ruby-evil-winrm clockify-cli-bin nerdfetch-git eww
+	ruby-evil-winrm clockify-cli-bin nerdfetch-git eww android-apktool-bin \
+	nuclei-bin dnsx-bin
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config

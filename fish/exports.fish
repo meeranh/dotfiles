@@ -3,6 +3,7 @@ fish_add_path "$HOME/.config/scripts"
 fish_add_path "$HOME/.local/bin"
 fish_add_path /usr/lib
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
+fish_add_path "/home/neo/.bun/bin"
 
 # Increase if you want larger text in Firefox
 set -gx QT_SCALE_FACTOR 1.25

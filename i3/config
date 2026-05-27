@@ -33,12 +33,8 @@ exec --no-startup-id xsetroot -cursor_name left_ptr
 # Caps Lock to Escape
 exec_always setxkbmap -option caps:escape
 
-# Touchpad tap-to-click
-exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Enabled" 1
-exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Drag Enabled" 1
-exec_always xinput set-prop "Synaptics TM3276-022" "libinput Tapping Drag Lock Enabled" 1
-exec_always xinput set-prop "Synaptics TM3276-022" "libinput Disable While Typing Enabled" 1
-exec_always xinput set-prop "Synaptics TM3276-022" "libinput Middle Emulation Enabled" 1
+# Touchpad tap-to-click (auto-detects device name, works across laptops)
+exec_always --no-startup-id ~/.config/i3/scripts/touchpad.sh
 
 # Setting gaps
 gaps inner 10

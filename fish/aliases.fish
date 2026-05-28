@@ -1,7 +1,7 @@
 # All my aliases
 alias open xdg-open
 alias pdf zathura
-alias nf neofetch
+alias nf nerdfetch
 alias bt bluetui
 alias vim nvim
 alias rm trash

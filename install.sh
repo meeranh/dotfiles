@@ -1,6 +1,7 @@
 # Install packages via Pacman
 sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
-    cargo python-virtualenv pipewire sof-firmware alsa-utils alsa-firmware wf-recorder swaybg neovim vim sudo foot \
+    cargo python-virtualenv pipewire sof-firmware alsa-utils alsa-firmware intel-media-driver libva-utils \
+		wf-recorder swaybg neovim vim sudo foot \
     dunst libnotify wofi zsh fish starship obs-studio xdg-desktop-portal-wlr \
     xdg-desktop-portal xdg-desktop-portal-gtk wlsunset playerctl grim slurp wl-clipboard yazi \
     trash-cli metasploit nmap luarocks rust nodejs npm pnpm yarn \

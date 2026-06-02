@@ -34,7 +34,7 @@ paru -S caido-cli burpsuite zen-browser-bin xcp waydroid \
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config
-git clone -b sway https://github.com/meeranh/dotfiles.git ~/.config
+git clone -b i3sway https://github.com/meeranh/dotfiles.git ~/.config
 
 # Add current user to necessary groups
 sudo usermod -aG kvm,video,libvirt,docker,network,input $(whoami)

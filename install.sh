@@ -73,6 +73,8 @@ sudo tee /etc/xrdp/startwm.sh >/dev/null <<'WMEOF'
 #!/bin/sh
 [ -r /etc/profile ] && . /etc/profile
 [ -r ~/.profile ] && . ~/.profile
+# i3 is launched from sh (not fish), so add the dirs fish normally puts on PATH
+export PATH="$HOME/.config/scripts:$HOME/.local/bin:$PATH"
 exec i3
 WMEOF
 sudo chmod +x /etc/xrdp/startwm.sh

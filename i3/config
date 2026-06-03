@@ -106,7 +106,7 @@ set $browser 'zen-browser'
     bindsym $mod+s exec --no-startup-id screenshot
 
     # Screen recording (toggle: start, press again to stop)
-    bindsym $mod+Shift+r exec --no-startup-id record toggle
+    bindsym $mod+Shift+s exec --no-startup-id record toggle
 
     # Music and sound
     bindsym $mod+m exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle && sleep 0.05 && eww update volume-muted=$(pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //')"

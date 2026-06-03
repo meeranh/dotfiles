@@ -101,7 +101,7 @@ set $browser 'zen-browser'
     bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5% && eww update volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk -F/ '{print $2}' | tr -dc 0-9)"
 
     # Screenshots (selection by default)
-    bindsym Print exec --no-startup-id screen
+    bindsym Print exec --no-startup-id screenshot
 
     # Screen recording
     bindsym $mod+Print exec --no-startup-id record start

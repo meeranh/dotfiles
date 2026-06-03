@@ -89,7 +89,7 @@ input type:touchpad {
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume 0 -5%'
 
 		# Screenshots and screenrecords
-    bindsym Print exec 'screen full'
+    bindsym Print exec 'screenshot full'
     bindsym $mod+Print exec 'record start'
     bindsym $mod+Shift+Print exec 'record stop'
 

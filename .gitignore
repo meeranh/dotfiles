@@ -6,6 +6,7 @@
 !user-dirs.dirs
 !install.sh
 !README.md
+!HYPERV.md
 
 # Un-ignore specific directories and their contents
 !alacritty/

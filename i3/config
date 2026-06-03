@@ -7,7 +7,9 @@ exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 exec_always --no-startup-id xdg-desktop-portal-gtk &
 
 # Monitor
-exec xrandr --output eDP-1 --mode 1920x1080 --rate 144
+# HyperV + xrdp Enhanced Session: there is no physical eDP-1, and the resolution
+# is negotiated dynamically over RDP, so the xrandr call is dropped here.
+# exec xrandr --output eDP-1 --mode 1920x1080
 
 # Spiral layout script (python-i3ipc package required)
 set $spiralcmd python3 ~/.config/i3/scripts/spiral_layout.py
@@ -17,8 +19,16 @@ exec_always --no-startup-id eww kill; eww daemon && eww open bar
 exec_always --no-startup-id $spiralcmd
 exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc-x11
 
+# HyperV + xrdp: load the PipeWire xrdp module so audio redirects to the Enhanced
+# Session (Windows). i3 doesn't run XDG autostart, so trigger it here. The script
+# self-guards (exits unless inside an xrdp session), and the sleep lets PipeWire come up.
+exec --no-startup-id sh -c 'sleep 3; /usr/lib/pipewire-module-xrdp/load_pw_modules.sh'
+
 # Compositor (glx backend, no effects — fixes input lag and pixel artifacts)
-exec --no-startup-id picom -b
+# HyperV + xrdp: glx is unavailable under xrdp's X server and xrdp manages the
+# framebuffer itself, so picom is disabled here. Re-enable with `picom -b --backend xrender`
+# only if a specific X11 redraw quirk appears in the Enhanced Session.
+# exec --no-startup-id picom -b
 
 # Pre-warm kitty server (launch on scratchpad so it's hidden)
 exec --no-startup-id kitty --single-instance --class kitty-warmup

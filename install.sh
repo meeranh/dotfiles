@@ -30,11 +30,11 @@ rm -rf paru-bin
 paru -S caido-cli burpsuite zen-browser-bin xcp waydroid \
 	python-pyclip subfinder httpx feroxbuster-bin urlencode netexec \
 	ruby-evil-winrm clockify-cli-bin nerdfetch-git eww android-apktool-bin \
-	nuclei-bin dnsx-bin
+	nuclei-bin dnsx-bin xrdp xorgxrdp pipewire-module-xrdp
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config
-git clone -b i3sway https://github.com/meeranh/dotfiles.git ~/.config
+git clone -b hyperv https://github.com/meeranh/dotfiles.git ~/.config
 
 # Add current user to necessary groups
 sudo usermod -aG kvm,video,libvirt,docker,network,input $(whoami)
@@ -53,6 +53,35 @@ for drv in qemu interface network nodedev nwfilter secret storage; do
     sudo systemctl enable virt${drv}d{,-ro,-admin}.socket;
 done
 sudo systemctl enable libvirtd.service
+
+# Hyper-V Enhanced Session Mode: xrdp over the VMBus vsock transport, serving an
+# i3 (X11) session. This is the seamless "open the VM in Hyper-V Manager and get
+# audio + clipboard + dynamic resolution" path. xrdp renders i3 to its own X
+# server, so there's no GPU/dmabuf dependency (unlike Wayland screencast).
+#
+# Host side (run ONCE in an elevated PowerShell on the Windows host):
+#   Set-VM "<VMName>" -EnhancedSessionTransportType HvSocket
+# Only the [Globals] listen port becomes vsock; backend session ports (-1) stay as-is.
+sudo awk -i inplace '/^\[/{s=$0} s=="[Globals]"&&/^port=/{print "port=vsock://-1:3389";next} {print}' /etc/xrdp/xrdp.ini
+sudo sed -i \
+    -e 's|^security_layer=.*|security_layer=rdp|' \
+    -e 's|^crypt_level=.*|crypt_level=none|' \
+    -e 's|^bitmap_compression=.*|bitmap_compression=false|' \
+    /etc/xrdp/xrdp.ini
+# Launch i3 as the RDP session
+sudo tee /etc/xrdp/startwm.sh >/dev/null <<'WMEOF'
+#!/bin/sh
+[ -r /etc/profile ] && . /etc/profile
+[ -r ~/.profile ] && . ~/.profile
+exec i3
+WMEOF
+sudo chmod +x /etc/xrdp/startwm.sh
+# Allow Xorg to start from the xrdp session (no console seat)
+printf 'allowed_users=anybody\nneeds_root_rights=yes\n' | sudo tee /etc/X11/Xwrapper.config
+# Persist the Hyper-V socket kernel module
+echo hv_sock | sudo tee /etc/modules-load.d/hv_sock.conf
+# Enable xrdp at boot
+sudo systemctl enable xrdp.service
 
 # Set shell to Fish
 chsh -s $(which fish)

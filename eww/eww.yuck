@@ -17,12 +17,8 @@
 
 (defvar volume-muted "no")
 
-(defpoll network-name :interval "5s"
-  `nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2`)
 
 (defvar backlight 0)
-(deflisten _backlight-listener :initial ""
-  `~/.config/eww/scripts/brightness-listen.sh`)
 
 (defpoll battery-text :interval "5s"
   `~/.config/eww/scripts/battery.sh text`)
@@ -84,18 +80,7 @@
       (label :class "vol-icon" :text {volume-muted == "yes" ? " " : " "})
       (label :class "module-text" :text "${volume}%"))))
 
-(defwidget network []
-  (box :orientation "h" :space-evenly false :spacing 6
-    (label :class "net-icon" :text {network-name == "" ? "󰖪 " : " "})
-    (label :class "module-text" :text network-name)))
 
-(defwidget bright []
-  (eventbox :onscroll "~/.config/eww/scripts/brightness-scroll.sh {}"
-            :onclick "~/.config/eww/scripts/nightlight-toggle.sh"
-            :onrightclick "~/.config/eww/scripts/nightlight-toggle.sh reset"
-    (box :orientation "h" :space-evenly false :spacing 6
-      (label :class "bright-icon" :text " ")
-      (label :class "module-text" :text "${backlight}%"))))
 
 (defwidget clock []
   (label :class "clock" :text {formattime(EWW_TIME, "%I:%M %p")}))
@@ -126,13 +111,12 @@
 
 (defwidget bar-right []
   (box :orientation "h" :space-evenly false :halign "end" :spacing 3
-    (cpu) (sep) (memory) (sep) (battery) (sep) (vol) (sep) (network) (sep) (bright) (sep) (clock) (recording)))
+    (cpu) (sep) (memory) (sep) (battery) (sep) (vol) (sep) (clock) (recording)))
 
 (defwidget bar []
   (box :orientation "h" :class "bar" :hexpand true
     ;; Hidden labels to keep deflisten scripts alive
     (label :visible false :text "${_volume-listener}")
-    (label :visible false :text "${_backlight-listener}")
     (centerbox :orientation "h" :hexpand true
       (bar-left)
       (bar-center)

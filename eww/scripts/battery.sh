@@ -4,13 +4,14 @@ bat1=$(cat /sys/class/power_supply/BAT1/capacity 2>/dev/null)
 state0=$(cat /sys/class/power_supply/BAT0/status 2>/dev/null)
 state1=$(cat /sys/class/power_supply/BAT1/status 2>/dev/null)
 
-if [ -n "$bat1" ]; then
-    avg=$(( (bat0 + bat1) / 2 ))
-    display="$bat0 \u00b7 $bat1%"
-else
-    avg=$bat0
-    display="$bat0%"
-fi
+# Single percentage: average of present batteries, ignoring dormant/empty (0%)
+# slots (e.g. a phantom BAT0 that the HyperV host exposes alongside the real one).
+sum=0; n=0
+for c in "$bat0" "$bat1"; do
+    if [ -n "$c" ] && [ "$c" -gt 0 ] 2>/dev/null; then sum=$((sum + c)); n=$((n + 1)); fi
+done
+if [ "$n" -gt 0 ]; then avg=$((sum / n)); else avg=${bat0:-0}; fi
+display="$avg%"
 
 if [ "$avg" -ge 80 ]; then icon=" "
 elif [ "$avg" -ge 60 ]; then icon=" "

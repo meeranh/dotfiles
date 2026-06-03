@@ -69,7 +69,7 @@ set $right l
 
 set $term kitty --single-instance
 set $menu rofi -show drun
-set $browser 'zen-browser'
+set $browser env GDK_DPI_SCALE=1.25 zen-browser
 
 ### Key bindings
 

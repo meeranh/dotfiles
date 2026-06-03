@@ -6,7 +6,7 @@ exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
 exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 
 # Monitor
-output eDP-1 mode 1920x1080@144Hz
+output Virtual-1 mode 1920x1080
 
 # Sway spiral layout script (python-i3ipc package required)
 set $spiralcmd 'python3 ~/.config/sway/scripts/spiral_layout.py'

@@ -75,6 +75,11 @@ sudo tee /etc/xrdp/startwm.sh >/dev/null <<'WMEOF'
 [ -r ~/.profile ] && . ~/.profile
 # i3 is launched from sh (not fish), so add the dirs fish normally puts on PATH
 export PATH="$HOME/.config/scripts:$HOME/.local/bin:$PATH"
+# Import the X display into the systemd user manager so D-Bus-activated portals
+# (xdg-desktop-portal-gtk) can start. Without it they fail "cannot open display"
+# and apps lose portal features like dark-mode (browser falls back to light).
+export XAUTHORITY="${XAUTHORITY:-$HOME/.Xauthority}"
+systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP
 exec i3
 WMEOF
 sudo chmod +x /etc/xrdp/startwm.sh

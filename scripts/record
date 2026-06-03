@@ -11,6 +11,11 @@ DIRECTORY="$HOME/media/screenrecords/"
 # Make screenshot folder
 mkdir -p $DIRECTORY
 
+# "toggle" maps to stop if already recording, else start (passes through $2, e.g. "audio")
+if [ "$1" = "toggle" ]; then
+	if [ -e /tmp/recording ]; then set -- stop; else set -- start "$2"; fi
+fi
+
 if [ "$1" = "start" ]; then
 	touch /tmp/recording
 	dunstify "🔴 Recording Started"

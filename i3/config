@@ -102,10 +102,11 @@ set $browser 'zen-browser'
 
     # Screenshots (selection by default)
     bindsym Print exec --no-startup-id screenshot
+    # Print key isn't reliable over RDP, so bind screenshots to a $mod combo:
+    bindsym $mod+s exec --no-startup-id screenshot
 
-    # Screen recording
-    bindsym $mod+Print exec --no-startup-id record start
-    bindsym $mod+Shift+Print exec --no-startup-id record stop
+    # Screen recording (toggle: start, press again to stop)
+    bindsym $mod+Shift+r exec --no-startup-id record toggle
 
     # Music and sound
     bindsym $mod+m exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle && sleep 0.05 && eww update volume-muted=$(pactl get-sink-mute @DEFAULT_SINK@ | sed 's/Mute: //')"

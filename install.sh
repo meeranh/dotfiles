@@ -20,11 +20,11 @@ sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
 		xorg-xinput ly picom redshift bun obsidian sshpass
 
 # Clone paru-bin from AUR and install it
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 cd ..
-rm -rf paru-bin
+rm -rf paru
 
 # Install additional packages via paru
 paru -S caido-cli burpsuite zen-browser-bin xcp waydroid \

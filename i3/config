@@ -76,12 +76,15 @@ set $browser env GDK_DPI_SCALE=1.25 zen-browser
 # Basics:
     # Start a terminal
     bindsym $mod+Return exec --no-startup-id $term
+    bindsym Mod1+Return exec --no-startup-id $term
 
     # Open your browser
     bindsym $mod+b exec --no-startup-id $browser
+    bindsym Mod1+b exec --no-startup-id $browser
 
     # Kill focused window
     bindsym $mod+w kill
+    bindsym Mod1+w kill
 
     # Start your launcher
     bindsym $mod+r exec --no-startup-id $menu

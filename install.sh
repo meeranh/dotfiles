@@ -85,6 +85,10 @@ WMEOF
 sudo chmod +x /etc/xrdp/startwm.sh
 # Allow Xorg to start from the xrdp session (no console seat)
 printf 'allowed_users=anybody\nneeds_root_rights=yes\n' | sudo tee /etc/X11/Xwrapper.config
+# Bake caps:escape into the xrdp keyboard so it survives xorgxrdp's keymap sets
+# (a runtime `setxkbmap` gets clobbered on connect/reconnect; RDP sends layout, not options).
+grep -q 'XkbOptions.*caps:escape' /etc/X11/xrdp/xorg.conf || \
+  sudo sed -i '/Driver "xrdpkeyb"/a\    Option "XkbOptions" "caps:escape"' /etc/X11/xrdp/xorg.conf
 # Persist the Hyper-V socket kernel module
 echo hv_sock | sudo tee /etc/modules-load.d/hv_sock.conf
 # Enable xrdp at boot

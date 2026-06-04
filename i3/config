@@ -147,6 +147,12 @@ set $browser env GDK_DPI_SCALE=1.25 zen-browser
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
 
+    # Alt Keys: left & right navigation with Alt keys
+    bindsym Mod1+$right focus right
+    bindsym Mod1+$left focus left
+    bindsym Mod1+Shift+$left move left
+    bindsym Mod1+Shift+$right move right
+
 # Workspaces:
     # Switch to workspace
     bindsym $mod+1 workspace number 1

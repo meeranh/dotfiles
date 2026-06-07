@@ -40,8 +40,8 @@ exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/img/pinkRose.jpg
 # Disable startup notification cursor (loading spinner)
 exec --no-startup-id xsetroot -cursor_name left_ptr
 
-# Caps Lock to Escape
-exec_always setxkbmap -option caps:escape
+# Caps Lock to Escape: applied manually via keybindings ($mod+Caps_Lock to enable,
+# $mod+Escape to revert) — xorgxrdp resets the keymap on every RDP (re)connect.
 
 # Touchpad tap-to-click (auto-detects device name, works across laptops)
 exec_always --no-startup-id ~/.config/i3/scripts/touchpad.sh
@@ -91,6 +91,10 @@ set $browser env GDK_DPI_SCALE=1.25 zen-browser
 
     # Lock
     bindsym $mod+Mod1+l exec --no-startup-id "i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png"
+
+    # Caps<->Escape remap (xorgxrdp wipes it on RDP connect; apply/revert manually)
+    bindsym $mod+Caps_Lock exec --no-startup-id setxkbmap -option caps:escape
+    bindsym $mod+Escape exec --no-startup-id setxkbmap -option ''
 
     # Toggle bar
     bindsym $mod+semicolon exec --no-startup-id "eww close bar 2>/dev/null && exit 0; eww open bar"

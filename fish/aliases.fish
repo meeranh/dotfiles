@@ -29,3 +29,7 @@ alias dnd "killall dunst"
 alias gp "git push"
 alias xcopy "xclip -selection clipboard"
 alias xpaste "xclip -selection clipboard -o"
+
+# Caps Lock <-> Escape (xorgxrdp resets the keymap on each RDP connect)
+alias cap "setxkbmap -option caps:escape"
+alias uncap "setxkbmap -option ''"

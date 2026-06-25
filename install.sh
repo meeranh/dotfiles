@@ -7,7 +7,7 @@ sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
     trash-cli metasploit nmap luarocks rust nodejs npm pnpm yarn \
     python-i3ipc zathura zathura-pdf-mupdf bluetui imv mpv zoxide pyenv hurl \
     nemo btop swaylock noto-fonts-emoji noto-fonts-extra os-prober grub \
-    wev ripgrep fzf cowsay tmux networkmanager aws-cli azure-cli \
+    wev ripgrep fzf cowsay tmux networkmanager aws-cli-v2 azure-cli \
     proxychains-ng v2ray github-cli bluez bluez-utils openvpn cloudflared \
     docker docker-compose wireplumber less tree ttf-iosevka-nerd brightnessctl fd \
     tldr locate go python-pipx glow ltrace rz-cutter radare2 rz-ghidra r2ghidra \

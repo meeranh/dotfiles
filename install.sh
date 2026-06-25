@@ -17,7 +17,7 @@ sudo pacman -S sway wlroots0.20 git base-devel python python-pip make \
 		net-tools sqlmap xdg-utils ghidra wireshark-qt perl-image-exiftool binwalk \
 		imagemagick hydra smbclient remmina freerdp hashcat pocl 7zip waybar inotify-tools \
 		i3-wm kitty rofi shotgun hacksaw feh maim i3lock xclip xdotool xorg-xinit xorg-server \
-		xorg-xinput ly picom redshift bun obsidian sshpass tree-sitter-cli
+		xorg-xinput ly picom redshift bun obsidian sshpass tree-sitter-cli mermaid-cli
 
 # Clone paru-bin from AUR and install it
 git clone https://aur.archlinux.org/paru.git

@@ -30,7 +30,7 @@ rm -rf paru
 paru -S caido-cli burpsuite zen-browser-bin xcp waydroid \
 	python-pyclip subfinder httpx feroxbuster-bin urlencode netexec \
 	ruby-evil-winrm clockify-cli-bin nerdfetch-git eww android-apktool-bin \
-	nuclei-bin dnsx-bin xrdp xorgxrdp pipewire-module-xrdp claude-code copilot
+	nuclei-bin dnsx-bin xrdp xorgxrdp pipewire-module-xrdp claude-code github-copilot-cli-bin
 
 # Clone dotfiles repository and set up .zshrc
 rm -rf ~/.config

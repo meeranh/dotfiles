@@ -193,6 +193,7 @@ set $browser env GDK_DPI_SCALE=1.25 zen-browser
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
+    bindsym Mod1+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+t floating toggle

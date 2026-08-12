@@ -93,7 +93,9 @@ set $browser env GDK_DPI_SCALE=1.25 zen-browser
     bindsym $mod+Mod1+l exec --no-startup-id "i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png"
 
     # Caps<->Escape remap (xorgxrdp wipes it on RDP connect; apply/revert manually)
-    bindsym $mod+Caps_Lock exec --no-startup-id setxkbmap -option caps:escape
+    # Enable via a script so the trigger press doesn't leave Caps Lock toggled on.
+    # --release: fire after the Caps press settles so the stray lock can be cleared.
+    bindsym --release $mod+Caps_Lock exec --no-startup-id ~/.config/i3/scripts/caps-escape.sh
     bindsym $mod+Escape exec --no-startup-id setxkbmap -option ''
 
     # Toggle bar

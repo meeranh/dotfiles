@@ -6,8 +6,8 @@ exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
 exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 exec_always --no-startup-id xdg-desktop-portal-gtk &
 
-# Monitor
-exec xrandr --output eDP-1 --mode 1920x1080 --rate 144
+# Monitors (auto-detects outputs, enables any connected external display)
+exec_always --no-startup-id ~/.config/i3/scripts/monitors.sh
 
 # Spiral layout script (python-i3ipc package required)
 set $spiralcmd python3 ~/.config/i3/scripts/spiral_layout.py
@@ -158,6 +158,9 @@ set $browser 'zen-browser'
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+
+    # Re-detect monitors (after plugging or unplugging one)
+    bindsym $mod+o exec --no-startup-id ~/.config/i3/scripts/monitors.sh
 
     # Window resizing
     bindsym $mod+Left resize shrink width 20px

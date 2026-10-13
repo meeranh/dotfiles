@@ -159,6 +159,52 @@ set $browser 'zen-browser'
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
 
+    # External monitor workspaces (11-20 on F1-F10)
+    bindsym $mod+F1 workspace number 11
+    bindsym $mod+F2 workspace number 12
+    bindsym $mod+F3 workspace number 13
+    bindsym $mod+F4 workspace number 14
+    bindsym $mod+F5 workspace number 15
+    bindsym $mod+F6 workspace number 16
+    bindsym $mod+F7 workspace number 17
+    bindsym $mod+F8 workspace number 18
+    bindsym $mod+F9 workspace number 19
+    bindsym $mod+F10 workspace number 20
+    bindsym $mod+Shift+F1 move container to workspace number 11
+    bindsym $mod+Shift+F2 move container to workspace number 12
+    bindsym $mod+Shift+F3 move container to workspace number 13
+    bindsym $mod+Shift+F4 move container to workspace number 14
+    bindsym $mod+Shift+F5 move container to workspace number 15
+    bindsym $mod+Shift+F6 move container to workspace number 16
+    bindsym $mod+Shift+F7 move container to workspace number 17
+    bindsym $mod+Shift+F8 move container to workspace number 18
+    bindsym $mod+Shift+F9 move container to workspace number 19
+    bindsym $mod+Shift+F10 move container to workspace number 20
+
+    # Pin 1-10 to the laptop panel, 11-20 to the external monitor
+    # (11-20 fall back to the laptop panel when nothing is plugged in)
+    set $ext nonprimary primary
+    workspace 1 output primary
+    workspace 2 output primary
+    workspace 3 output primary
+    workspace 4 output primary
+    workspace 5 output primary
+    workspace 6 output primary
+    workspace 7 output primary
+    workspace 8 output primary
+    workspace 9 output primary
+    workspace 10 output primary
+    workspace 11 output $ext
+    workspace 12 output $ext
+    workspace 13 output $ext
+    workspace 14 output $ext
+    workspace 15 output $ext
+    workspace 16 output $ext
+    workspace 17 output $ext
+    workspace 18 output $ext
+    workspace 19 output $ext
+    workspace 20 output $ext
+
     # Re-detect monitors (after plugging or unplugging one)
     bindsym $mod+o exec --no-startup-id ~/.config/i3/scripts/monitors.sh
 

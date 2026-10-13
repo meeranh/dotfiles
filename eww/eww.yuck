@@ -105,10 +105,11 @@
     (label :class "rec-sep" :text "")
     (label :class "rec-icon" :text "󰑊")))
 
-(defwidget workspaces []
+(defwidget workspaces [screen]
   (box :class "workspaces" :orientation "h" :space-evenly false :spacing 0
     (for ws in workspaces-raw
-      (button :class "ws ws-${ws.state}"
+      (button :class "ws ws-${ws.state} ${ws.gap}"
+              :visible {ws.screen == screen}
               :onclick "if pgrep -x sway >/dev/null; then swaymsg workspace ${ws.name}; else i3-msg workspace ${ws.name}; fi"
         (label :text "${ws.icon}")))))
 
@@ -120,22 +121,22 @@
   (box :orientation "h" :space-evenly false :halign "start" :spacing 7
     (arch) (sep-left) (media-controls) (sep-left) (title-widget)))
 
-(defwidget bar-center []
+(defwidget bar-center [screen]
   (box :orientation "h" :space-evenly false :halign "center"
-    (workspaces)))
+    (workspaces :screen screen)))
 
 (defwidget bar-right []
   (box :orientation "h" :space-evenly false :halign "end" :spacing 3
     (cpu) (sep) (memory) (sep) (battery) (sep) (vol) (sep) (network) (sep) (bright) (sep) (clock) (recording)))
 
-(defwidget bar []
+(defwidget bar [screen]
   (box :orientation "h" :class "bar" :hexpand true
     ;; Hidden labels to keep deflisten scripts alive
     (label :visible false :text "${_volume-listener}")
     (label :visible false :text "${_backlight-listener}")
     (centerbox :orientation "h" :hexpand true
       (bar-left)
-      (bar-center)
+      (bar-center :screen screen)
       (bar-right))))
 
 ;; ============================================================
@@ -150,4 +151,15 @@
   :reserve (struts :distance "35px" :side "top")
   :exclusive true
   :namespace "eww-bar"
-  (bar))
+  (bar :screen "laptop"))
+
+;; Same bar on the external monitor, showing workspaces 11-20
+(defwindow bar-external
+  :monitor 1
+  :geometry (geometry :x "0%" :y "0%" :width "100%" :height "35px"
+                      :anchor "top center")
+  :stacking "fg"
+  :reserve (struts :distance "35px" :side "top")
+  :exclusive true
+  :namespace "eww-bar"
+  (bar :screen "external"))

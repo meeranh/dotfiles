@@ -6,14 +6,14 @@ exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
 exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 exec_always --no-startup-id xdg-desktop-portal-gtk &
 
-# Monitors (auto-detects outputs, enables any connected external display)
-exec_always --no-startup-id ~/.config/i3/scripts/monitors.sh
+# Monitors (auto-detects outputs, enables any connected external display),
+# then one eww bar per screen
+exec_always --no-startup-id ~/.config/i3/scripts/monitors.sh; ~/.config/eww/scripts/bars.sh
 
 # Spiral layout script (python-i3ipc package required)
 set $spiralcmd python3 ~/.config/i3/scripts/spiral_layout.py
 
 # Always run
-exec_always --no-startup-id eww kill; eww daemon && eww open bar
 exec_always --no-startup-id $spiralcmd
 exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc-x11
 
@@ -80,7 +80,7 @@ set $browser 'zen-browser'
     bindsym $mod+Mod1+l exec --no-startup-id "i3lock -i $HOME/.config/wallpapers/img/GtfoHD-1080.png"
 
     # Toggle bar
-    bindsym $mod+semicolon exec --no-startup-id "eww close bar 2>/dev/null && exit 0; eww open bar"
+    bindsym $mod+semicolon exec --no-startup-id "~/.config/eww/scripts/bars.sh toggle"
 
     # Increase brightness
     bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl s +1% && eww update backlight=$(brightnessctl -m | awk -F, '{print $4}' | tr -d '%')"
@@ -206,7 +206,7 @@ set $browser 'zen-browser'
     workspace 20 output $ext
 
     # Re-detect monitors (after plugging or unplugging one)
-    bindsym $mod+o exec --no-startup-id ~/.config/i3/scripts/monitors.sh
+    bindsym $mod+o exec --no-startup-id "~/.config/i3/scripts/monitors.sh; ~/.config/eww/scripts/bars.sh"
 
     # Window resizing
     bindsym $mod+Left resize shrink width 20px

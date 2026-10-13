@@ -97,9 +97,13 @@ $arch:    #0A9CF5;
     }
 }
 
+// Gap before the external monitor's workspaces (11-20)
+.ws-external { margin-left: 16px; }
+
 .ws-empty   { color: $purple; }
 .ws-occupied { color: $blue; }
 .ws-focused  { color: $yellow; }
+.ws-visible  { color: $cyan; }
 .ws-urgent   { color: $red; }
 
 // Recording
